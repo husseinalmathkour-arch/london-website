@@ -164,7 +164,7 @@ export async function POST(req: NextRequest) {
       `
       await Promise.all(admins.map(async (admin) => {
         const result = await resend.emails.send({
-          from: 'onboarding@resend.dev',
+          from: 'noreply@londonlanguageacademy.net',
           to: admin.email,
           subject: `New Enquiry from ${name}${enquiryType ? ` — ${enquiryType}` : ''}`,
           html,
