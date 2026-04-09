@@ -62,7 +62,7 @@ export default function Navbar() {
               alt="London Language Academy"
               width={260}
               height={80}
-              className="h-12 sm:h-14 lg:h-40 w-auto object-contain"
+              className="h-16 sm:h-14 lg:h-40 w-auto object-contain"
               priority
             />
           </Link>
