@@ -1,0 +1,921 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "languages": "Languages",
+    "studyAbroad": "Study Abroad",
+    "levelTest": "Level Test",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "enrolNow": "Enrol Now",
+    "studentPortal": "OBS"
+  },
+  "topbar": {
+    "selectBranch": "Select Branch",
+    "getDirections": "Get Directions"
+  },
+  "hero": {
+    "headline": "Unlock Your Future with Language Skills",
+    "subheadline": "Where Your Journey Begins",
+    "description": "World-class language courses in Central London. Expert teachers, proven results, and a community of learners from over 80 countries.",
+    "ctaPrimary": "Book a Course",
+    "ctaSecondary": "Take Level Test",
+    "socialProof": "Join 1000+ students already learning with us",
+    "learnPrefix": "Learn",
+    "trustBadge1": "British Council Accredited",
+    "trustBadge2": "Cambridge Authorised Centre",
+    "trustBadge3": "4.9/5 Student Rating"
+  },
+  "stats": {
+    "students": "Active Students",
+    "languages": "Languages Taught",
+    "satisfaction": "Satisfaction Rate",
+    "years": "Years of Excellence"
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "heroLabel": "About LLA",
+    "heroHeading": "Where Your Journey Begins",
+    "heroDescription": "London Language Academy has been a pillar of language education in London for nearly a hundred years. In 2021, we brought that legacy to Turkey, opening our first centre in Bursa.",
+    "heroBody": "We make a difference with our innovative and unique education system — offering lifetime support, native speaker teachers, and endless activities across our Bursa and Istanbul centres.",
+    "missionLabel": "Our Mission",
+    "missionText": "Our mission is to make the language learning process an effective, enjoyable, and personalised experience — helping our students achieve their personal and professional goals. With our experienced instructors and innovative teaching methods, we aim to maximise every student's language potential.",
+    "visionLabel": "Our Vision",
+    "visionText": "Our vision is to be an educational institution that transforms language learning at both national and international levels. Through our centres in Bursa and Istanbul, we provide the best support on your language learning journey, helping you gain a global perspective and go beyond cultural boundaries.",
+    "valuesLabel": "What We Stand For",
+    "valuesHeading": "Our Core Values",
+    "teamLabel": "Our People",
+    "teamHeading": "Meet the Leadership Team",
+    "teamSubheading": "Our team brings together decades of language teaching expertise, academic rigour, and genuine passion for student success.",
+    "timelineLabel": "Our Journey",
+    "timelineHeading": "A Decade in the Making",
+    "accreditationsHeading": "Accreditations & Affiliations",
+    "ctaTitle": "Join the free placement test now!",
+    "ctaDescription": "Discover your language level and find the right course for you.",
+    "ctaPrimary": "Take Level Test",
+    "ctaSecondary": "View Courses",
+    "values": {
+      "resultsDriven": {
+        "title": "Results-Driven",
+        "description": "Every decision we make is guided by one question: will this help our students achieve their goals faster and more effectively?"
+      },
+      "genuineCare": {
+        "title": "Genuine Care",
+        "description": "We invest in every student as an individual. Our pastoral support, flexible policies, and open-door culture reflect a genuine commitment to your wellbeing."
+      },
+      "academicExcellence": {
+        "title": "Academic Excellence",
+        "description": "We hold ourselves to the highest academic standards, continuously investing in teacher training, curriculum development, and learning resources."
+      },
+      "globalPerspective": {
+        "title": "Global Perspective",
+        "description": "Our student body represents over 80 countries. This diversity enriches every classroom and prepares our students for the real international world."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We are transparent about what we offer, honest about what to expect, and rigorous in upholding our accreditation standards and commitments."
+      },
+      "innovation": {
+        "title": "Continuous Innovation",
+        "description": "Language education is evolving. We stay at the forefront of methodology, technology, and research to ensure our courses remain best-in-class."
+      }
+    },
+    "whyLabel": "Why Choose Us",
+    "whyHeading": "Why London Language Academy?",
+    "whyDescription": "London Language Academy offers a unique and modern teaching style. Drawing on years of experience, we have developed a teaching approach that suits all learning styles and focuses on real communication skills.",
+    "whyItem1Title": "Experienced Teachers",
+    "whyItem1Desc": "Our internationally experienced and expert instructors provide personalised training to ensure you get the best results.",
+    "whyItem2Title": "Modern Teaching Methods",
+    "whyItem2Desc": "Using technology-supported and innovative teaching materials, we make your language learning process more efficient and enjoyable.",
+    "whyItem3Title": "Wide Range of Programmes",
+    "whyItem3Desc": "From beginner to advanced level, we offer a wide range of programmes suitable for every age group and need.",
+    "testimonialsLabel": "Student Stories",
+    "testimonialsHeading": "What Our Students Say"
+  },
+  "services": {
+    "pageTitle": "Language Courses",
+    "heroLabel": "Our Courses",
+    "heroHeading": "The Right Course for Every Goal",
+    "heroDescription": "From your first words in a new language to achieving a band 8 IELTS score, we have a programme designed specifically for your needs, schedule, and ambitions.",
+    "moreProgrammes": "More Programmes",
+    "otherCoursesHeading": "Other Courses We Offer",
+    "generalEnglishBadge": "General English Programme",
+    "generalEnglishLevels": [
+      { "description": "This level is designed for those who have never encountered English before and have not received any English education. The aim is to establish the foundations of English before moving on to the next level." },
+      { "description": "This is where your real English education begins. The focus will be on the four main communication skills: listening, speaking, reading and writing. You will learn to form sentences and use English structures correctly. Education is conducted 100% in English." },
+      { "description": "At this level you will begin to participate in English conversations and understand others with ease. Great emphasis is placed on reading skills to help you understand texts and develop your vocabulary. You will have two teachers — one a native English speaker and one a foreign teacher." },
+      { "description": "At this level you can call yourself an English speaker. You can express yourself easily and understand almost everything. Once you reach this level you can start preparing for exams such as IELTS and TOEFL." },
+      { "description": "You are now officially an English speaker. You can watch films without subtitles and speak idiomatically with ease. If you are not aiming for an academic English career, your general English education ends here." },
+      { "description": "If you are planning an academic career or want to prepare for English exams such as IELTS or TOEFL, this level is exactly for you. Here you can significantly expand your vocabulary, which will be of great benefit in your professional life." }
+    ],
+    "generalEnglishHeading": "6 Levels. One Clear Path to Fluency.",
+    "flexibleScheduling": "Flexible scheduling",
+    "maxClassSize": "Max 12 per class",
+    "allLevels": "All levels A1–C2",
+    "whatsIncludedLabel": "All Courses Include",
+    "whatsIncludedHeading": "Everything You Need to Succeed",
+    "whatsIncludedBody": "When you enrol at London Language Academy, you get far more than just classroom time. Every course comes with a comprehensive suite of support, resources, and opportunities.",
+    "notSureHeading": "Not sure which course?",
+    "notSureBody": "Our academic advisors are here to help you choose the right course. Book a free 30-minute consultation — no obligation.",
+    "courseGuide": [
+      { "question": "Need English for everyday life?", "answer": "General English is for you." },
+      { "question": "Need IELTS 6.5+?", "answer": "Exam Preparation course." },
+      { "question": "Need language for work?", "answer": "Business Language programme." },
+      { "question": "Want maximum flexibility?", "answer": "One-to-One or Online." },
+      { "question": "Need rapid progress?", "answer": "Intensive Course." }
+    ],
+    "howItWorksLabel": "Getting Started",
+    "howItWorksHeading": "From Enquiry to First Lesson in 4 Steps",
+    "timetableHeading": "Class Timetable Overview",
+    "timetableBody": "We offer four sessions per day, Monday to Thursday and Saturday. Friday is our day off.",
+    "timetableSession": "Session",
+    "timetableMon": "Mon",
+    "timetableTue": "Tue",
+    "timetableWed": "Wed",
+    "timetableThu": "Thu",
+    "timetableFri": "Fri",
+    "timetableSat": "Sat",
+    "timetableSun": "Sun",
+    "ctaTitle": "Ready to Enrol?",
+    "ctaDescription": "Spaces fill quickly, especially for popular morning sessions. Secure your place today.",
+    "ctaPrimary": "Enrol Now",
+    "ctaSecondary": "Take Level Test",
+    "includes": {
+      "materials": "Comprehensive course materials (no extra cost)",
+      "portal": "Access to online learning portal 24/7",
+      "assessments": "Weekly progress assessments",
+      "conversation": "Conversation practice workshops",
+      "feedback": "Teacher feedback on written work",
+      "tutorial": "Monthly one-to-one tutorial",
+      "community": "LLA student community access",
+      "certificate": "Certificate of completion"
+    },
+    "processSteps": [
+      {
+        "step": "01",
+        "title": "Take the Level Test",
+        "description": "Complete our free online placement test to identify your current level across speaking, writing, reading, and listening."
+      },
+      {
+        "step": "02",
+        "title": "Speak to an Advisor",
+        "description": "Our academic advisors will review your test results and recommend the most suitable course and schedule for your goals."
+      },
+      {
+        "step": "03",
+        "title": "Enrol & Begin",
+        "description": "Complete enrolment online in minutes. Receive your welcome pack, timetable, and access to our student learning portal."
+      },
+      {
+        "step": "04",
+        "title": "Track Your Progress",
+        "description": "Receive weekly progress reports, monthly assessments, and continuous feedback from your teacher throughout the course."
+      }
+    ]
+  },
+  "languages": {
+    "pageTitle": "Languages We Teach",
+    "heroLabel": "15+ Languages",
+    "heroHeading": "Every Language. Every Level.",
+    "heroDescription": "From the world's most widely spoken languages to specialist programmes for professionals and exam candidates. Find your language below.",
+    "cefrLabel": "CEFR Framework",
+    "cefrHeading": "Understanding Language Levels",
+    "cefrBody": "All our courses are aligned to the Common European Framework of Reference for Languages (CEFR) — the international standard for language level assessment.",
+    "approachLabel": "Our Approach",
+    "approachHeading": "Communicative Language Teaching — Done Right",
+    "approachP1": "Our language courses are built on the Communicative Language Teaching (CLT) approach — the most widely researched and consistently effective methodology in modern language pedagogy.",
+    "approachP2": "Rather than drilling grammar rules in isolation, we place language in real-world contexts from the very first lesson. You will speak, listen, read, and write in situations you will actually encounter.",
+    "approachP3": "We supplement CLT with task-based learning, content-integrated instruction, and — where appropriate for exam preparation — test strategy coaching.",
+    "approachPillars": [
+      { "title": "Four Skills Integration", "desc": "Every lesson develops reading, writing, listening, and speaking in an integrated, natural way." },
+      { "title": "Real-World Contexts", "desc": "Language is always practised in authentic situations you will encounter outside the classroom." },
+      { "title": "Cultural Competence", "desc": "Language and culture are inseparable. We build your cultural knowledge alongside linguistic skills." },
+      { "title": "Personalised Feedback", "desc": "Regular detailed feedback on your speaking and writing accelerates improvement and builds confidence." }
+    ],
+    "matrixHeading": "Full Languages & Courses Matrix",
+    "ctaTitle": "Not Sure Which Language to Learn?",
+    "ctaDescription": "Our academic team can help you choose the right language based on your career goals, travel plans, or personal interests.",
+    "ctaPrimary": "Speak to an Advisor",
+    "ctaSecondary": "Take Level Test",
+    "cefrDescriptions": [
+      "No prior knowledge needed. You will learn greetings, basic vocabulary, and simple sentences.",
+      "You understand basic expressions and can communicate in simple, familiar situations.",
+      "You can deal with most situations likely to arise whilst travelling and describe experiences.",
+      "You can interact with native speakers with a degree of fluency without strain.",
+      "You can express ideas fluently and spontaneously without obvious searching for words.",
+      "You can express yourself spontaneously, very fluently, and precisely in complex situations."
+    ],
+    "names": {
+      "english": "English",
+      "french": "French",
+      "spanish": "Spanish",
+      "german": "German",
+      "italian": "Italian",
+      "mandarin": "Mandarin",
+      "arabic": "Arabic",
+      "portuguese": "Portuguese",
+      "japanese": "Japanese",
+      "korean": "Korean",
+      "russian": "Russian",
+      "dutch": "Dutch",
+      "turkish": "Turkish",
+      "greek": "Greek",
+      "swedish": "Swedish"
+    }
+  },
+  "studyAbroad": {
+    "heroLabel": "Study Abroad",
+    "heroHeading": "Discover the World Through Language",
+    "heroDescription": "We offer overseas education consultancy in 12 countries — from language courses and summer schools to academic placements, internships, and Work & Travel programmes.",
+    "applyNow": "Apply Now",
+    "browseLabel": "Browse Programmes",
+    "programmesLabel": "Our Programmes",
+    "programmesHeading": "Choose Your Path Abroad",
+    "programmesBody": "From a 2-week language course to a full academic semester — we guide you every step of the way.",
+    "consultingLabel": "Consultancy",
+    "consultingHeading": "Expert Guidance at Every Step",
+    "consultingBody": "Our consultants across all departments provide you with the most accurate, practical, and realistic information — helping you make the most suitable choice based on your needs, budget, and goals.",
+    "contactUs": "Contact Us",
+    "ctaTitle": "Ready to Start Your International Journey?",
+    "ctaDescription": "Book a free consultation with our study abroad team today.",
+    "ctaPrimary": "Book Free Consultation",
+    "ctaSecondary": "View All Courses",
+    "highlights": "Highlights",
+    "getInfo": "Get Info",
+    "programmes": [
+      {
+        "id": "language",
+        "title": "Language Education Abroad",
+        "badge": "12 Countries",
+        "description": "Study a language in its natural environment. We offer General & Intensive English, Business English, IELTS/TOEFL/GRE/GMAT preparation, Academic Semesters, and specialist courses (Law, Medical, Teacher Training). Programmes run 2–44 weeks, starting every Monday. Minimum age 16; special programmes for 30+.",
+        "highlights": [
+          "12 countries",
+          "2–44 weeks",
+          "Starts every Monday",
+          "Age 16+",
+          "General, Intensive & Exam prep",
+          "Business, Legal & Medical English"
+        ]
+      },
+      {
+        "id": "summer",
+        "title": "Summer School",
+        "badge": "Ages 5–18",
+        "description": "An unforgettable holiday and education programme combining language lessons with sports, cultural activities, and social events. Students experience the language in its natural setting while building friendships from around the world. Destinations include England, USA, Canada, Ireland, Malta, Spain, Germany, and Italy.",
+        "highlights": [
+          "Ages 5–18",
+          "~150 partner schools",
+          "15 hrs tuition/week",
+          "English + Football/Basketball/Equestrian",
+          "STEM & Future Leaders",
+          "Individual, group or family enrolment"
+        ]
+      },
+      {
+        "id": "academic",
+        "title": "Academic Placement",
+        "badge": "University & High School",
+        "description": "Our advisors guide you through every step of securing a place at a school or university abroad — from choosing the right country and programme to accommodation, scholarships, and visa applications. We cover the UK, USA, Canada, Australia, Ireland, Germany, Italy, and more.",
+        "highlights": [
+          "High school & university",
+          "UK, USA, Canada, Australia",
+          "Ireland, Germany, Italy",
+          "Scholarships guidance",
+          "Visa support",
+          "College Counseling available"
+        ]
+      },
+      {
+        "id": "work-travel",
+        "title": "Work & Travel",
+        "badge": "USA",
+        "description": "Designed for undergraduate and postgraduate students, the Work & Travel programme lets you live and work in the United States for up to 4 months, then explore the country for a further 25 days. Gain real work experience, practise your English daily, and discover American culture first-hand.",
+        "highlights": [
+          "Open to university students",
+          "Up to 4 months work",
+          "25 days travel",
+          "Destination: USA",
+          "Cultural immersion",
+          "Improve your English daily"
+        ]
+      },
+      {
+        "id": "internship",
+        "title": "Internship Programme",
+        "badge": "$1,200–$3,500/month",
+        "description": "Gain hands-on professional experience in an international environment while improving your language skills and earning a competitive monthly salary. Available in Tourism, Marketing, Logistics, Accounting, Finance, IT, Education, and Engineering across the USA, Spain, Malta, Australia, Asia, and the Middle East.",
+        "highlights": [
+          "$1,200–$3,500/month",
+          "USA, Spain, Malta, Australia",
+          "Asia & Middle East",
+          "Tourism, IT, Finance & more",
+          "Professional consulting support",
+          "Boost your CV internationally"
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Total Immersion",
+        "description": "Every interaction becomes a language learning opportunity. Progress accelerates dramatically when you live the language."
+      },
+      {
+        "title": "Expert Consultancy",
+        "description": "Our consultants provide the most accurate, practical guidance to help you choose the right programme for your goals."
+      },
+      {
+        "title": "Flexible Durations",
+        "description": "From 2-week language courses to full academic semesters — we have options for every timeline and budget."
+      },
+      {
+        "title": "Cultural Immersion",
+        "description": "Sport, social activities, and cultural experiences woven into every programme to enrich your time abroad."
+      },
+      {
+        "title": "Full Support",
+        "description": "From visa guidance to accommodation — we handle the logistics so you can focus on learning and growing."
+      },
+      {
+        "title": "12 Countries",
+        "description": "England, USA, Canada, Australia, Ireland, Spain, Germany, Italy, Malta, and more — the world is your classroom."
+      }
+    ]
+  },
+  "levelTest": {
+    "pageTitle": "Free English Level Test",
+    "heroHeading": "Free English Level Test",
+    "heroDescription": "Discover your current English level with our 10-question assessment. Each question is calibrated to the CEFR framework (A1–C2). Takes about 5 minutes.",
+    "tenQuestions": "10 Questions",
+    "fiveMinutes": "~5 minutes",
+    "freeInstant": "Free & Instant",
+    "startTest": "Start the Test",
+    "note": "Note: This test assesses written English only. For a full speaking assessment, contact us to arrange a free 30-minute placement conversation.",
+    "questionOf": "Question {current} of {total}",
+    "level": "Level",
+    "yourResults": "Your Results",
+    "youScored": "You scored {score}/{total} correct answers",
+    "questionBreakdown": "Question Breakdown",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "enrolInCourse": "Enrol in {level} Course",
+    "retakeTest": "Retake Test",
+    "nextQuestion": "Next Question",
+    "seeResults": "See My Results",
+    "explanation": "Explanation",
+    "scoresoFar": "Score so far:",
+    "formTitle": "Your Details",
+    "formSubtitle": "We'll send your results and course recommendations to you.",
+    "formFirstName": "First Name",
+    "formFirstNamePlaceholder": "e.g. James",
+    "formLastName": "Last Name",
+    "formLastNamePlaceholder": "e.g. Smith",
+    "formEmail": "Email Address",
+    "formEmailPlaceholder": "james@example.com",
+    "formPhone": "Phone Number",
+    "formPhonePlaceholder": "+44 7700 900000",
+    "formBeginBtn": "Begin the Test",
+    "formPrivacy": "Your details are kept private and used only to send you your results.",
+    "formErrorFirstName": "First name is required",
+    "formErrorLastName": "Last name is required",
+    "formErrorEmail": "Email is required",
+    "formErrorEmailInvalid": "Enter a valid email",
+    "formErrorPhone": "Phone number is required",
+    "formBranch": "Branch",
+    "formBranchPlaceholder": "Select a branch",
+    "formErrorBranch": "Please select a branch",
+    "questionLabel": "Question {n} (Level: {level})",
+    "results": {
+      "a1": {
+        "level": "A1",
+        "label": "Beginner",
+        "desc": "You are just starting your English journey. Our A1 Beginner course is the perfect place to begin — no prior knowledge required!"
+      },
+      "a2": {
+        "level": "A2",
+        "label": "Elementary",
+        "desc": "You have a basic foundation. Our A2 Elementary course will expand your vocabulary and grammar, building real conversational confidence."
+      },
+      "b1": {
+        "level": "B1",
+        "label": "Intermediate",
+        "desc": "You can handle many everyday situations. Our B1 Intermediate course will take your fluency and accuracy to the next level."
+      },
+      "b2": {
+        "level": "B2",
+        "label": "Upper-Intermediate",
+        "desc": "You communicate effectively in most situations. Our B2 course — including Cambridge B2 First preparation — is ideal for you."
+      },
+      "c1": {
+        "level": "C1",
+        "label": "Advanced",
+        "desc": "You speak and write with high fluency. Our C1 Advanced course will refine your precision and prepare you for Cambridge C1."
+      },
+      "c2": {
+        "level": "C2",
+        "label": "Proficiency",
+        "desc": "Exceptional! You are at near-native proficiency. Our C2 Proficiency course or Cambridge C2 preparation programme is the pinnacle."
+      }
+    }
+  },
+  "blogPostsData": [
+    {
+      "id": "1",
+      "title": "How to Prepare for IELTS in 60 Days: A Complete Strategy",
+      "excerpt": "A proven, step-by-step approach to achieving your target IELTS band score in just two months — from vocabulary building to exam-day tactics.",
+      "category": "Exam Tips",
+      "readTime": "8 min read"
+    },
+    {
+      "id": "2",
+      "title": "Top 5 Languages to Learn for Your Career in 2026",
+      "excerpt": "Discover which languages offer the greatest professional advantages in today's global job market — and how to get started learning them.",
+      "category": "Career",
+      "readTime": "6 min read"
+    },
+    {
+      "id": "3",
+      "title": "The Science of Language Learning: What Really Works",
+      "excerpt": "Cognitive science research reveals the most effective techniques for acquiring a second language — and dispels some popular myths.",
+      "category": "Learning Science",
+      "readTime": "10 min read"
+    },
+    {
+      "id": "4",
+      "title": "Student Life in London: Everything You Need to Know",
+      "excerpt": "From affordable neighbourhoods to hidden cultural gems, here is your insider guide to making the most of studying in one of the world's greatest cities.",
+      "category": "Student Life",
+      "readTime": "7 min read"
+    },
+    {
+      "id": "5",
+      "title": "Cambridge B2 First: Your Complete Preparation Guide",
+      "excerpt": "Everything you need to know about the Cambridge B2 First examination — structure, marking criteria, common pitfalls, and top tips for success.",
+      "category": "Exam Tips",
+      "readTime": "9 min read"
+    },
+    {
+      "id": "6",
+      "title": "Our Best Study Abroad Immersion Programmes in Spain for 2026",
+      "excerpt": "From Barcelona to Seville, discover our handpicked Spanish immersion programmes that combine expert language tuition with unforgettable cultural experiences.",
+      "category": "Study Abroad",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "7",
+      "title": "Why We Should Travel to Different Countries",
+      "excerpt": "International travel goes beyond leisure — it offers personal development, cultural understanding, and life-changing experiences that transform the way we see the world.",
+      "category": "Study Abroad",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "8",
+      "title": "Never Stop Learning: The Key to Infinite Growth",
+      "excerpt": "Lifelong learning is essential for personal and professional development. Continuous learning extends beyond classrooms and encourages us to embrace growth through daily challenges.",
+      "category": "Learning Science",
+      "readTime": "4 min read"
+    },
+    {
+      "id": "9",
+      "title": "Advantages of Learning a Language in a Language Course",
+      "excerpt": "Why is enrolling in a structured language course more effective than self-study? Here are 10 key advantages that make the difference.",
+      "category": "Learning Science",
+      "readTime": "6 min read"
+    },
+    {
+      "id": "10",
+      "title": "IELTS and TOEFL Training in Bursa",
+      "excerpt": "London Language Academy offers specialised IELTS and TOEFL preparation courses in Bursa — Nilüfer to help students achieve their target scores for international education and professional opportunities.",
+      "category": "Exam Tips",
+      "readTime": "5 min read"
+    }
+  ],
+  "blog": {
+    "pageTitle": "Blog & Resources",
+    "heroLabel": "Blog & Resources",
+    "heroHeading": "Language Learning Insights",
+    "heroDescription": "Expert advice, study guides, and inspiration from the London Language Academy team and our community of language learners.",
+    "featuredArticle": "Featured Article",
+    "allArticles": "All Articles",
+    "newsletterHeading": "Never Miss an Article",
+    "newsletterBody": "Subscribe to get our latest language learning guides and LLA news delivered to your inbox.",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "moreArticles": "More Articles",
+    "readyToLearn": "Ready to Learn?",
+    "readyToLearnBody": "Turn insight into action. Browse our courses or take the level test.",
+    "browseCourses": "Browse Courses",
+    "categories": {
+      "all": "All",
+      "examTips": "Exam Tips",
+      "career": "Career",
+      "learningScience": "Learning Science",
+      "studentLife": "Student Life",
+      "studyAbroad": "Study Abroad"
+    }
+  },
+  "faq": {
+    "pageTitle": "Frequently Asked Questions",
+    "heroLabel": "FAQ",
+    "heroHeading": "Frequently Asked Questions",
+    "heroDescription": "Everything you need to know about London Language Academy. Can't find the answer you're looking for? Our team is always happy to help.",
+    "stillHaveQuestion": "Still have a question?",
+    "stillHaveQuestionBody": "Our friendly admissions team is available Monday–Friday 9am–6pm and Saturday 10am–4pm to answer any questions.",
+    "contactUs": "Contact Us",
+    "callUs": "Call +44 (0)20 1234 5678",
+    "browseByTopic": "Browse by Topic",
+    "ctaTitle": "Ready to Take the Next Step?",
+    "ctaDescription": "Browse our courses, take the free level test, or speak to an advisor. We are here to help you find the right path.",
+    "ctaPrimary": "View Courses",
+    "ctaSecondary": "Contact Us",
+    "categoryLabels": {
+      "General": "General",
+      "Courses": "Courses",
+      "Teachers": "Teachers",
+      "Study Abroad": "Study Abroad"
+    },
+    "items": [
+      { "id": "1", "category": "General", "question": "Where is London Language Academy located?", "answer": "Our main school has been based in central London for nearly 100 years. We also have branches in Bursa and Istanbul, Turkey, founded in 2021. All three locations offer the same high-quality language education.", "answerHtml": "Our main school has been based in <strong class=\"faq-highlight\">central London</strong> for nearly 100 years. We also have branches in <strong class=\"faq-highlight\">Bursa and Istanbul, Turkey</strong>, founded in 2021. All three locations offer the same high-quality language education." },
+      { "id": "2", "category": "General", "question": "What age groups do you teach?", "answer": "Our courses are open to learners of all ages. We offer dedicated programmes for adults, young learners, and also Kids courses for younger students.", "answerHtml": "Our courses are open to <strong class=\"faq-highlight\">learners of all ages</strong>. We offer dedicated programmes for adults, young learners, and also <strong class=\"faq-highlight\">Kids courses</strong> for younger students." },
+      { "id": "3", "category": "General", "question": "What other languages can I learn at London Language Academy?", "answer": "At London Language Academy we do not focus only on English — we give equal importance to German, French, Russian, Spanish, Italian and many more languages. We offer group and private lesson options for these languages to cater to various learning needs.", "answerHtml": "At <strong class=\"faq-highlight\">London Language Academy</strong> we do not focus only on English — we give equal importance to <strong class=\"faq-highlight\">German, French, Russian, Spanish, Italian</strong> and many more languages. We offer group and private lesson options for these languages to cater to various learning needs." },
+      { "id": "4", "category": "General", "question": "What types of activities are there?", "answer": "At London Language Academy we go beyond traditional teaching methods. Every day we offer a variety of engaging activities such as speaking, listening, games, makeup and café lessons. We also organise fun outdoor activities every week including volleyball matches, picnics, table tennis, bowling, meet-and-greet parties and more.", "answerHtml": "At <strong class=\"faq-highlight\">London Language Academy</strong> we go beyond traditional teaching methods. Every day we offer a variety of engaging activities such as <strong class=\"faq-highlight\">speaking, listening, games, makeup and café lessons</strong>. We also organise fun outdoor activities every week including volleyball matches, picnics, table tennis, bowling, meet-and-greet parties and more." },
+      { "id": "5", "category": "General", "question": "How long does it take to learn a language?", "answer": "There is no fixed timeframe for learning a language, as we continuously acquire new knowledge throughout our lives. However, if you dedicate yourself intensively to a language, you can generally gain conversational ability within 3 to 6 months. As London Language Academy, we aim to accelerate this process.", "answerHtml": "There is no fixed timeframe for learning a language, as we continuously acquire new knowledge throughout our lives. However, if you dedicate yourself intensively, you can generally gain conversational ability within <strong class=\"faq-highlight\">3 to 6 months</strong>. As <strong class=\"faq-highlight\">London Language Academy</strong>, we aim to accelerate this process." },
+      { "id": "6", "category": "General", "question": "How many students are in each class?", "answer": "Our classes have between 7 and 14 students.", "answerHtml": "Our classes have between <strong class=\"faq-highlight\">7 and 14 students</strong>." },
+      { "id": "7", "category": "General", "question": "Is Turkish spoken during lessons?", "answer": "Our lessons are conducted entirely 100% in English.", "answerHtml": "Our lessons are conducted entirely <strong class=\"faq-highlight\">100% in English</strong>." },
+      { "id": "8", "category": "General", "question": "Do you send students abroad for education?", "answer": "We send students abroad through our language education programme, summer school, academic placement programme, internship programme and Work & Travel.", "answerHtml": "We send students abroad through our <em><strong class=\"faq-highlight\">language education programme, summer school, academic placement programme, internship programme and Work &amp; Travel</strong></em>." },
+      { "id": "9", "category": "Courses", "question": "How do I register for a course?", "answer": "Registering is simple. Take our free online level test to find your level, then contact us via the enquiry form or call us directly. Our team will guide you through the enrolment process, confirm your session times, and get you started.", "answerHtml": "Registering is simple. Take our <strong class=\"faq-highlight\">free online level test</strong> to find your level, then contact us via the enquiry form or call us directly. Our team will guide you through the <strong class=\"faq-highlight\">enrolment process</strong>, confirm your session times, and get you started." },
+      { "id": "10", "category": "Courses", "question": "What days and times are classes held?", "answer": "Classes run Monday–Wednesday, Tuesday–Thursday, and Saturday–Sunday. Sessions start at 09:00, 13:00 and 19:00.", "answerHtml": "Classes run <strong class=\"faq-highlight\">Monday–Wednesday, Tuesday–Thursday, and Saturday–Sunday</strong>. Sessions start at <strong class=\"faq-highlight\">09:00, 13:00 and 19:00</strong>." },
+      { "id": "11", "category": "Courses", "question": "Are makeup / catch-up lessons available?", "answer": "Yes — makeup lessons are available in both general and private formats.", "answerHtml": "Yes — makeup lessons are available in both <strong class=\"faq-highlight\">general and private</strong> formats." },
+      { "id": "12", "category": "Courses", "question": "Do activities happen every day?", "answer": "We have speaking activities every single day of the week.", "answerHtml": "We have <strong class=\"faq-highlight\">speaking activities</strong> every single day of the week." },
+      { "id": "13", "category": "Courses", "question": "Can I attend activities as much as I want?", "answer": "You can join our speaking clubs free of charge for life.", "answerHtml": "You can join our <em><strong class=\"faq-highlight\">speaking clubs free of charge for life</strong></em>." },
+      { "id": "14", "category": "Courses", "question": "How do you determine my level?", "answer": "A placement test is conducted verbally or in writing. The written test contains 72 questions covering all course levels. The oral test consists of 5–10 minutes of everyday conversation.", "answerHtml": "A placement test is conducted <strong class=\"faq-highlight\">verbally or in writing</strong>.<br/>• Written test: <strong class=\"faq-highlight\">72 questions</strong> covering all course levels<br/>• Oral test: <strong class=\"faq-highlight\">5–10 minutes</strong> of everyday conversation" },
+      { "id": "15", "category": "Courses", "question": "How are classes formed?", "answer": "Students are placed at the appropriate level based on their placement test results and begin their education from there.", "answerHtml": "Students are placed at the <strong class=\"faq-highlight\">appropriate level based on their placement test results</strong> and begin their education from there." },
+      { "id": "16", "category": "Courses", "question": "Do you provide course materials?", "answer": "We use Oxford's Headway resources. The books are free and completely original.", "answerHtml": "We use <strong class=\"faq-highlight\">Oxford's Headway</strong> resources. The books are <strong class=\"faq-highlight\">free and completely original</strong>." },
+      { "id": "17", "category": "Courses", "question": "Do you offer online courses?", "answer": "Yes. All of our courses are available online via live video sessions. Our online courses use the same curriculum, teachers, and materials as our in-person classes, so you get the same quality education from anywhere in the world.", "answerHtml": "Yes. All of our courses are available <strong class=\"faq-highlight\">online via live video sessions</strong>. Our online courses use the same curriculum, teachers, and materials as our in-person classes, so you get the <strong class=\"faq-highlight\">same quality education from anywhere in the world</strong>." },
+      { "id": "18", "category": "Courses", "question": "Do you prepare students for official exams?", "answer": "Yes. We offer dedicated preparation courses for IELTS, Cambridge B2 First, C1 Advanced and C2 Proficiency, as well as other internationally recognised qualifications.", "answerHtml": "Yes. We offer dedicated preparation courses for <strong class=\"faq-highlight\">IELTS, Cambridge B2 First, C1 Advanced</strong> and <strong class=\"faq-highlight\">C2 Proficiency</strong>, as well as other internationally recognised qualifications." },
+      { "id": "19", "category": "Teachers", "question": "Are your teachers native speakers?", "answer": "Freshman (A1–A2) → Turkish teacher (to avoid communication difficulties). Climber (A2–B1) → Turkish and foreign teachers. Transactional (B1+) and all higher levels → Taught exclusively by our foreign teachers.", "answerHtml": "<strong class=\"faq-highlight\">Freshman (A1–A2)</strong> → Turkish teacher (to avoid communication difficulties)<br/><strong class=\"faq-highlight\">Climber (A2–B1)</strong> → Turkish and foreign teachers<br/><strong class=\"faq-highlight\">Transactional (B1+) and all higher levels</strong> → Taught exclusively by our foreign teachers." },
+      { "id": "20", "category": "Teachers", "question": "What qualifications do your teachers hold?", "answer": "All of our teachers are experienced, qualified language educators. Native and non-native teachers are selected through a rigorous process to ensure they meet our high teaching standards. Every teacher undergoes ongoing professional development.", "answerHtml": "All of our teachers are <strong class=\"faq-highlight\">experienced, qualified language educators</strong>. Native and non-native teachers are selected through a <strong class=\"faq-highlight\">rigorous process</strong> to ensure they meet our high teaching standards. Every teacher undergoes <strong class=\"faq-highlight\">ongoing professional development</strong>." },
+      { "id": "21", "category": "Study Abroad", "question": "What study abroad programmes do you offer?", "answer": "We offer five programmes: Language Education Abroad, Summer School, Academic Placement, Work & Travel, and Internship. Each programme is tailored to different goals, durations, and age groups.", "answerHtml": "We offer five programmes: <strong class=\"faq-highlight\">Language Education Abroad, Summer School, Academic Placement, Work &amp; Travel,</strong> and <strong class=\"faq-highlight\">Internship</strong>. Each programme is tailored to different goals, durations, and age groups." },
+      { "id": "22", "category": "Study Abroad", "question": "Who can apply for a study abroad programme?", "answer": "Our study abroad programmes are open to students of all levels. Whether you are a beginner or advanced learner, we have a suitable programme for you. Some programmes such as internships and academic placements may require a minimum level.", "answerHtml": "Our study abroad programmes are open to <strong class=\"faq-highlight\">students of all levels</strong>. Whether you are a beginner or advanced learner, we have a suitable programme for you. Some programmes such as <strong class=\"faq-highlight\">internships and academic placements</strong> may require a minimum level." },
+      { "id": "23", "category": "Study Abroad", "question": "How do I apply for a study abroad programme?", "answer": "Simply contact us through the enquiry form on the Study Abroad page or send us a message directly. Our team will explain the available options, help you choose the right programme for your goals, and guide you through every step of the application process.", "answerHtml": "Simply contact us through the <strong class=\"faq-highlight\">enquiry form on the Study Abroad page</strong> or send us a message directly. Our team will explain the available options and guide you through <strong class=\"faq-highlight\">every step of the application process</strong>." },
+      { "id": "24", "category": "Study Abroad", "question": "Does study abroad include accommodation?", "answer": "Yes. Accommodation arrangements are included or coordinated as part of each programme. Depending on the destination and programme type, options may include host families, student dormitories, or shared apartments.", "answerHtml": "Yes. <strong class=\"faq-highlight\">Accommodation arrangements are included or coordinated</strong> as part of each programme. Options may include <strong class=\"faq-highlight\">host families, student dormitories, or shared apartments</strong>." },
+      { "id": "25", "category": "Study Abroad", "question": "What countries are available for study abroad?", "answer": "We send students to destinations across the world, including the UK, Ireland, Malta, USA, Canada, Australia and more. Available destinations depend on the programme type. Contact us to see which destinations are currently open.", "answerHtml": "We send students to destinations across the world, including <strong class=\"faq-highlight\">the UK, Ireland, Malta, USA, Canada, Australia</strong> and more. Available destinations depend on the programme type. Contact us to see which destinations are currently open." }
+    ]
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "heroLabel": "Get in Touch",
+    "heroHeading": "We Would Love to Hear From You",
+    "heroDescription": "Whether you have a question about a course, want to book a placement test, or need advice on the right programme — our team is here to help.",
+    "sendMessage": "Send Us a Message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phone": "Phone (optional)",
+    "enquiryType": "Enquiry Type",
+    "languageOfInterest": "Language of Interest",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your goals, current level, availability, and any specific questions...",
+    "consent": "I consent to London Language Academy storing my data and contacting me about my enquiry. I understand I can unsubscribe at any time. View our Privacy Policy.",
+    "sendMessageBtn": "Send Message",
+    "sending": "Sending...",
+    "messageSent": "Message Sent!",
+    "messageSentBody": "Thank you for getting in touch. A member of our admissions team will respond to your enquiry within one business day.",
+    "sendAnother": "Send another message",
+    "responseTime": "We typically respond within 1 business day. Urgent? Call us at +44 (0)20 1234 5678.",
+    "selectType": "Select type...",
+    "selectLanguage": "Select language...",
+    "required": "Required",
+    "validEmail": "Valid email required",
+    "selectEnquiryType": "Please select an enquiry type",
+    "messageTooShort": "Please tell us more (min 20 characters)",
+    "consentRequired": "Please accept to continue",
+    "quickLinks": "Quick Links",
+    "mainCampus": "Main Campus",
+    "fastResponse": "Fast Response",
+    "fastResponseDesc": "We reply to all enquiries within 1 business day",
+    "expertAdvice": "Expert Advice",
+    "expertAdviceDesc": "Speak directly with our academic advisors, not a chatbot",
+    "noPressure": "No Pressure",
+    "noPressureDesc": "We provide honest guidance — no pushy sales tactics",
+    "enquiryTypes": {
+      "general": "General Enquiry",
+      "courseInfo": "Course Information",
+      "examPrep": "Exam Preparation",
+      "business": "Business Language",
+      "oneToOne": "One-to-One Tuition",
+      "online": "Online Courses",
+      "studyAbroad": "Study Abroad",
+      "corporate": "Corporate Training",
+      "visa": "Student Visa",
+      "accommodation": "Accommodation",
+      "generalEnglish": "General English",
+      "otherLanguages": "Other Languages",
+      "intensive": "Intensive Course",
+      "kids": "Kids Programme"
+    }
+  },
+  "footerLinks": {
+    "courses": {
+      "heading": "Courses",
+      "generalEnglish": "General English",
+      "examPrep": "Exam English",
+      "otherLanguages": "Other Languages",
+      "oneToOne": "One-to-One Tuition",
+      "online": "Online Courses",
+      "intensive": "Intensive Courses"
+    },
+    "languages": {
+      "heading": "Languages",
+      "english": "English",
+      "french": "French",
+      "spanish": "Spanish",
+      "german": "German",
+      "italian": "Italian",
+      "russian": "Russian"
+    },
+    "academy": {
+      "heading": "Academy",
+      "about": "About Us",
+      "studyAbroad": "Study Abroad",
+      "levelTest": "Level Test",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "tagline": "Central London's premier language school. Expert teachers, proven methods, and life-changing results since 2015.",
+    "newsletterHeading": "Stay updated",
+    "newsletterBody": "Get language tips, special offers, and news from the Academy.",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "subscribed": "Thank you for subscribing!",
+    "copyright": "London Language Academy Ltd. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "sections": {
+      "courses": "Courses",
+      "languages": "Languages",
+      "academy": "Academy"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "getDirections": "Get Directions",
+    "openHours": "Opening Hours",
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "backToTop": "Back to Top",
+    "startLearningToday": "Start Learning Today",
+    "exploreProgrammes": "Explore Programmes",
+    "viewCourses": "View All Courses",
+    "seeAllLanguages": "See All Languages"
+  },
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Mehmet Yilmaz",
+      "role": "Software Engineer",
+      "country": "Istanbul — Basaksehir",
+      "avatar": "MY",
+      "text": "London Language Academy completely transformed my career. After the Business English programme I secured a role at an international software company. The teachers are incredibly supportive and the curriculum is genuinely world-class.",
+      "course": "Business English"
+    },
+    {
+      "id": "2",
+      "name": "Ayse Kaya",
+      "role": "MBA Student",
+      "country": "Istanbul — Avcilar",
+      "avatar": "AK",
+      "text": "I needed IELTS 7.5 for my university application and was stuck at 6.5. After just eight weeks with LLA I achieved 7.5. The mock exams and personalised feedback were the game-changers.",
+      "course": "IELTS Preparation"
+    },
+    {
+      "id": "3",
+      "name": "Emre Demir",
+      "role": "Marketing Director",
+      "country": "Bursa — Nilufer",
+      "avatar": "ED",
+      "text": "The one-to-one lessons were worth every penny. My teacher adapted every lesson to my specific professional needs. My confidence in client presentations has skyrocketed. Highly recommend.",
+      "course": "One-to-One Business English"
+    },
+    {
+      "id": "4",
+      "name": "Zeynep Arslan",
+      "role": "Doctor",
+      "country": "Istanbul — Basaksehir",
+      "avatar": "ZA",
+      "text": "Learning English at London Language Academy was a fantastic experience. The teachers are extremely patient and attentive. I passed my Medical English exam on the first attempt.",
+      "course": "Medical English"
+    },
+    {
+      "id": "5",
+      "name": "Can Ozturk",
+      "role": "Restaurant Owner",
+      "country": "Bursa — Nilufer",
+      "avatar": "CO",
+      "text": "I chose the evening German classes and I am so glad I did. Small class sizes mean you actually speak and practise, not just listen. My German improved more in three months here than in two years elsewhere.",
+      "course": "General German"
+    },
+    {
+      "id": "6",
+      "name": "Selin Celik",
+      "role": "Accountant",
+      "country": "Istanbul — Avcilar",
+      "avatar": "SC",
+      "text": "The online courses are brilliant — same quality as in-person but from the comfort of my home. The live sessions are engaging and teachers make grammar enjoyable. I have now enrolled for Spanish too!",
+      "course": "Online General English"
+    }
+  ],
+  "serviceCards": {
+    "mostPopular": "Most Popular",
+    "enquireNow": "Enquire Now",
+    "exam-preparation": {
+      "title": "Exam English",
+      "description": "Targeted exam preparation for students at B1 level or above. Our professional tutors guide you through every aspect of your chosen exam — from strategy and structure to timed practice and feedback — so you walk in on exam day fully prepared.",
+      "features": [
+        "Prerequisite: B1 level or equivalent",
+        "PTE, IELTS & TOEFL preparation",
+        "YDS & YÖK DİL preparation",
+        "Professional exam tutors",
+        "Mock exams with detailed feedback",
+        "4 months · 120 hours"
+      ]
+    },
+    "other-languages": {
+      "title": "Other Languages",
+      "description": "Learn German, French, Spanish, or Russian with our expert tutors. Each language is taught across 4 levels — A1 through B2 — giving you a structured, clear path from complete beginner to upper-intermediate. Every level is 3 months and 96 hours of education.",
+      "features": [
+        "German, French, Spanish, Russian",
+        "Levels A1 · A2 · B1 · B2",
+        "3 months per level · 96 hours",
+        "Small groups (max 12)",
+        "Native & qualified tutors",
+        "Level certificate on completion"
+      ]
+    },
+    "one-to-one": {
+      "title": "One-to-One Tuition",
+      "description": "Fully personalised private lessons tailored to your goals, schedule, and learning style. Fastest route to fluency.",
+      "features": [
+        "Flexible scheduling",
+        "Custom curriculum",
+        "Your pace",
+        "Any language offered",
+        "In-person or online"
+      ]
+    },
+    "online-courses": {
+      "title": "Online Courses",
+      "description": "High-quality live online language classes with the same expert teachers and interactive format as in-person sessions.",
+      "features": [
+        "Live interactive sessions",
+        "Recorded for replay",
+        "Global class community",
+        "Digital workbooks",
+        "Tech support included"
+      ]
+    },
+    "intensive": {
+      "title": "Intensive Courses",
+      "description": "Complete a full level in just 1.5 months. Our intensive programme condenses 96 hours of education into an accelerated schedule — perfect for students who want fast results without compromising on quality.",
+      "features": [
+        "1.5 months per level",
+        "96 hours of education",
+        "Complete one full level fast",
+        "Small groups (max 12)",
+        "Expert teachers throughout",
+        "Certificate on completion"
+      ]
+    },
+    "general-english": {
+      "title": "General English",
+      "description": "A structured 6-level programme taking you from absolute beginner to near-native proficiency. Small classes, expert teachers, and a proven curriculum.",
+      "features": [
+        "6 levels: Newcomer to Proficient",
+        "Small groups (max 12)",
+        "Native-speaker teachers",
+        "Free study materials",
+        "Certificate on completion"
+      ]
+    }
+  },
+  "commitment": {
+    "label": "Our Commitment",
+    "heading": "We Stand Behind Every Student",
+    "body": "Two promises that set us apart from every other language school.",
+    "guaranteeBadge": "Success Guarantee",
+    "guaranteeHeading": "Free Lessons Until You Succeed",
+    "guaranteeBody": "If you complete your course and haven't reached your target level, we continue teaching you — completely free of charge — until you do. No conditions, no extra fees. Your success is our responsibility.",
+    "guaranteeItems": [
+      "Applies to all full-term courses",
+      "No time limit on extra lessons",
+      "Same qualified teachers",
+      "Progress tracked every step"
+    ],
+    "lifetimeBadge": "Lifetime Support",
+    "lifetimeHeading": "Lifetime Learning Support",
+    "lifetimeBody": "Once a London Language Academy student, always part of our community. After completing your course you get unlimited access to conversation sessions, academy events, and alumni resources — for life.",
+    "lifetimeItems": [
+      "Unlimited conversation practice sessions",
+      "Lifetime access to academy events",
+      "Alumni community & networking",
+      "Free refresher workshops"
+    ]
+  },
+  "kids": {
+    "label": "For Kids",
+    "heading": "Language Learning",
+    "headingHighlight": "for Kids",
+    "body": "Children learn languages faster and more naturally than adults. Our Kids programme is designed to make English and other languages fun, engaging, and confidence-building — through games, stories, songs, and interactive activities.",
+    "enrollButton": "Enrol Your Child",
+    "features": [
+      {
+        "title": "Ages 5–17",
+        "desc": "Age-appropriate groups with tailored curricula"
+      },
+      {
+        "title": "Fun & Interactive",
+        "desc": "Games, songs, storytelling and creative activities"
+      },
+      {
+        "title": "Small Groups",
+        "desc": "Maximum 8 kids per class for full attention"
+      },
+      {
+        "title": "Summer Schools",
+        "desc": "Intensive summer programmes available"
+      }
+    ],
+    "activities": [
+      "Reading & Writing",
+      "Songs & Rhymes",
+      "Language Games",
+      "Achievements",
+      "Speaking Practice",
+      "Summer Schools"
+    ]
+  },
+  "home": {
+    "accreditations": [
+      "🏛️ British Council Accredited",
+      "📜 Cambridge Authorised Centre",
+      "🏠 Home Office Registered",
+      "⭐ 4.9/5 Average Rating",
+      "🎓 10+ Years of Excellence"
+    ],
+    "statsSection": "Why Choose LLA",
+    "whyChooseHeading": "The London Language Academy Difference",
+    "whyChooseBody": "Thousands of students choose us every year. Here is why we are London's most trusted language school.",
+    "coursesLabel": "Our Programmes",
+    "coursesHeading": "Find the Right Course for You",
+    "coursesBody": "From beginner to advanced — we have a programme designed for every goal, schedule, and learning style.",
+    "viewAllCourses": "View All Courses",
+    "languagesLabel": "Languages",
+    "languagesHeading": "15+ Languages, One Academy",
+    "languagesBody": "Whether you want to travel, work, or simply connect with another culture, we have the language for you.",
+    "seeAllLanguages": "See all languages",
+    "testimonialsLabel": "Student Stories",
+    "testimonialsHeading": "Hear From Our Students",
+    "testimonialsBody": "Real results from real people. Our students' success is the measure of everything we do.",
+    "studyAbroadLabel": "Study Abroad Programme",
+    "studyAbroadHeading": "Learn a Language Where It's Actually Spoken",
+    "studyAbroadBody": "Immersion programmes in Spain, France, Germany, Italy, and Portugal. Expert tuition by day, culture and adventure by night.",
+    "exploreProgrammes": "Explore Programmes",
+    "ctaTitle": "Ready to Start Your Language Journey?",
+    "ctaDescription": "Take our free level test, browse our courses, or speak to one of our academic advisors. Your first step to fluency starts here.",
+    "ctaPrimary": "Enrol Now",
+    "ctaSecondary": "Take Level Test",
+    "whyChoose": {
+      "resultsFocused": {
+        "title": "Results-Focused Teaching",
+        "description": "Every lesson is designed around measurable outcomes. We track your progress weekly and adapt the curriculum to ensure continuous improvement."
+      },
+      "expertTeachers": {
+        "title": "Expert Native Speakers",
+        "description": "All teachers hold CELTA, DELTA, or equivalent qualifications. Many are former examiners for Cambridge and IELTS, giving you unparalleled insider knowledge."
+      },
+      "smallClasses": {
+        "title": "Small Class Sizes",
+        "description": "Maximum 12 students per group — often fewer. You get genuine speaking time and personalised attention in every single session."
+      },
+      "modernCurriculum": {
+        "title": "Modern Curriculum",
+        "description": "Our courses are built on the latest research in language acquisition. We combine proven communicative methods with cutting-edge digital resources."
+      },
+      "flexibleScheduling": {
+        "title": "Flexible Scheduling",
+        "description": "Morning, afternoon, evening, and weekend classes. Online and in-person options. We fit around your life, not the other way around."
+      },
+      "accredited": {
+        "title": "Accredited & Trusted",
+        "description": "We are accredited by the British Council and registered with the Home Office as a sponsor for student visas. Your education is in safe hands."
+      }
+    }
+  }
+}

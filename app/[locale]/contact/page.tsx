@@ -1,0 +1,15 @@
+import { createServiceClient } from '@/lib/supabase'
+import ContactPageClient from '@/components/ContactPageClient'
+
+export const revalidate = 3600
+
+export default async function ContactPage() {
+  const db = createServiceClient()
+  const { data: branches } = await db
+    .from('branches')
+    .select('id,name_en,name_tr,address_en,address_tr,phone,email,whatsapp,maps_url')
+    .eq('published', true)
+    .order('sort_order')
+
+  return <ContactPageClient branches={branches ?? []} />
+}
