@@ -34,19 +34,34 @@ export default function SubmissionsPage() {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
 
-  useEffect(() => {
-    supabase
-      .from('level_test_submissions')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .then(({ data }) => {
-        setSubmissions(data || [])
-        setLoading(false)
-      })
-  }, [])
+  useEffect(() => { load() }, [])
+
+  async function getAuthHeader() {
+    const { data } = await supabase.auth.getSession()
+    return data.session ? { 'Authorization': `Bearer ${data.session.access_token}` } : {} as Record<string, string>
+  }
+
+  async function load() {
+    const authHeader = await getAuthHeader()
+    const res = await fetch('/api/admin/submissions', { headers: authHeader })
+    const data = await res.json()
+    setSubmissions(Array.isArray(data) ? data : [])
+    setLoading(false)
+  }
 
   async function deleteSubmission(id: string) {
-    await supabase.from('level_test_submissions').delete().eq('id', id)
+    const authHeader = await getAuthHeader()
+    const res = await fetch('/api/admin/submissions', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json', ...authHeader },
+      body: JSON.stringify({ id }),
+    })
+
+    if (!res.ok) {
+      const data = await res.json().catch(() => null)
+      throw new Error(data?.error || 'Failed to delete submission.')
+    }
+
     setSubmissions(prev => prev.filter(s => s.id !== id))
     setDeleteConfirm(null)
   }
