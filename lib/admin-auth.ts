@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { createServiceClient } from '@/lib/supabase'
 
+function getPublicEnv(name: 'NEXT_PUBLIC_SUPABASE_URL' | 'NEXT_PUBLIC_SUPABASE_ANON_KEY') {
+  const value = process.env[name]
+
+  if (!value) {
+    throw new Error(`${name} is required.`)
+  }
+
+  return value
+}
+
 export async function verifyAdmin(req: NextRequest) {
   const authHeader = req.headers.get('Authorization')
   const token = authHeader?.replace('Bearer ', '').trim()
@@ -11,8 +21,8 @@ export async function verifyAdmin(req: NextRequest) {
   }
 
   const anonClient = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    getPublicEnv('NEXT_PUBLIC_SUPABASE_URL'),
+    getPublicEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
   )
 
   const { data: { user } } = await anonClient.auth.getUser(token)

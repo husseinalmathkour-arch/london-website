@@ -1,13 +1,23 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+function getEnv(name: 'NEXT_PUBLIC_SUPABASE_URL' | 'NEXT_PUBLIC_SUPABASE_ANON_KEY' | 'SUPABASE_SERVICE_ROLE_KEY') {
+  const value = process.env[name]
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+  if (!value) {
+    throw new Error(`${name} is required.`)
+  }
+
+  return value
+}
+
+export const supabase = createClient(
+  getEnv('NEXT_PUBLIC_SUPABASE_URL'),
+  getEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
+)
 
 // Server-side client with full access (only use in server components / API routes)
 export function createServiceClient() {
-  return createClient(supabaseUrl, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
+  return createClient(getEnv('NEXT_PUBLIC_SUPABASE_URL'), getEnv('SUPABASE_SERVICE_ROLE_KEY'), {
     auth: { autoRefreshToken: false, persistSession: false },
   })
 }
