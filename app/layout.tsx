@@ -6,9 +6,9 @@ import { getMetadataBase } from '@/lib/site-url'
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   icons: {
-    icon: '/shield-icon.png?v=2',
-    apple: '/shield-apple-icon.png?v=2',
-    shortcut: '/shield-icon.png?v=2',
+    icon: '/icon?v=3',
+    apple: '/apple-icon?v=3',
+    shortcut: '/icon?v=3',
   },
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
