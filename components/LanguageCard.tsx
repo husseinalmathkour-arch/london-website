@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Users } from 'lucide-react'
+import { useLocale } from 'next-intl'
 import type { Language } from '@/lib/data'
 import { GlowCard } from '@/components/ui/spotlight-card'
 import LanguageFlag from '@/components/LanguageFlag'
@@ -11,6 +14,8 @@ interface LanguageCardProps {
 }
 
 export default function LanguageCard({ language, href = '/languages' }: LanguageCardProps) {
+  const locale = useLocale()
+
   return (
     <GlowCard glowColor="red" className="bg-white dark:bg-gray-900 h-full group">
       <Link href={href} className="flex flex-col gap-3 h-full">
@@ -48,7 +53,7 @@ export default function LanguageCard({ language, href = '/languages' }: Language
         <div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-100 dark:border-gray-800">
           <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
             <Users className="w-3.5 h-3.5" />
-            <span>{language.students.toLocaleString()} students</span>
+            <span>{language.students.toLocaleString()} {locale === 'tr' ? 'öğrenci' : 'students'}</span>
           </div>
         </div>
         </div>

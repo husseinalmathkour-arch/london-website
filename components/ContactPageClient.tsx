@@ -64,6 +64,25 @@ export default function ContactPageClient({ branches }: { branches: Branch[] }) 
     { value: 'Accommodation', label: t('enquiryTypes.accommodation') },
   ]
 
+  const quickLinks = [
+    {
+      label: locale === 'tr' ? 'Ücretsiz Seviye Testini Çöz' : 'Take the Free Level Test',
+      href: `/${locale}/level-test`,
+    },
+    {
+      label: locale === 'tr' ? 'Tüm Kurslara Göz At' : 'Browse All Courses',
+      href: `/${locale}/services`,
+    },
+    {
+      label: locale === 'tr' ? 'Yurt Dışı Eğitim Programlarını İncele' : 'View Study Abroad Programmes',
+      href: `/${locale}/study-abroad`,
+    },
+    {
+      label: locale === 'tr' ? "SSS'yi Oku" : 'Read FAQ',
+      href: `/${locale}/faq`,
+    },
+  ]
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const service = params.get('service')
@@ -185,12 +204,7 @@ export default function ContactPageClient({ branches }: { branches: Branch[] }) 
               <div className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-4 text-sm">{t('quickLinks')}</h3>
                 <div className="space-y-2">
-                  {[
-                    { label: 'Take the Free Level Test', href: `/${locale}/level-test` },
-                    { label: 'Browse All Courses', href: `/${locale}/services` },
-                    { label: 'View Study Abroad Programmes', href: `/${locale}/study-abroad` },
-                    { label: 'Read FAQ', href: `/${locale}/faq` },
-                  ].map(({ label, href }) => (
+                  {quickLinks.map(({ label, href }) => (
                     <Link key={label} href={href} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-1">
                       <MessageSquare className="w-4 h-4 text-blue-400 flex-shrink-0" />
                       {label}
@@ -264,7 +278,17 @@ export default function ContactPageClient({ branches }: { branches: Branch[] }) 
                           <select name="language" value={form.language} onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
                             <option value="">{t('selectLanguage')}</option>
-                            {['English', 'French', 'Spanish', 'German', 'Italian', 'Mandarin', 'Arabic', 'Portuguese', 'Other'].map((l) => (
+                            {[
+                              locale === 'tr' ? 'İngilizce' : 'English',
+                              locale === 'tr' ? 'Fransızca' : 'French',
+                              locale === 'tr' ? 'İspanyolca' : 'Spanish',
+                              locale === 'tr' ? 'Almanca' : 'German',
+                              locale === 'tr' ? 'İtalyanca' : 'Italian',
+                              locale === 'tr' ? 'Mandarin Çincesi' : 'Mandarin',
+                              locale === 'tr' ? 'Arapça' : 'Arabic',
+                              locale === 'tr' ? 'Portekizce' : 'Portuguese',
+                              locale === 'tr' ? 'Diğer' : 'Other',
+                            ].map((l) => (
                               <option key={l} value={l}>{l}</option>
                             ))}
                           </select>
@@ -276,7 +300,7 @@ export default function ContactPageClient({ branches }: { branches: Branch[] }) 
                         <textarea name="message" value={form.message} onChange={handleChange} rows={5} placeholder={t('messagePlaceholder')}
                           className={`w-full px-4 py-3 border rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none ${errors.message ? 'border-red-400' : 'border-gray-300 dark:border-gray-700'}`} />
                         {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
-                        <p className="text-xs text-gray-400 mt-1">{form.message.length}/500 characters</p>
+                        <p className="text-xs text-gray-400 mt-1">{form.message.length}/500 {locale === 'tr' ? 'karakter' : 'characters'}</p>
                       </div>
 
                       <div>

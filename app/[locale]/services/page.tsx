@@ -58,6 +58,16 @@ export default async function ServicesPage() {
     t('includes.certificate'),
   ]
 
+  const generalEnglishNames = locale === 'tr'
+    ? ['Yeni Başlayan', 'Temel Başlangıç', 'Gelişim', 'Geçiş', 'İleri Geçiş', 'Yetkin']
+    : ['Newcomer', 'Freshman', 'Climber', 'Transitional', 'Superb', 'Proficient']
+  const generalEnglishGroups = locale === 'tr'
+    ? ['Başlangıç', 'Temel', 'Orta Öncesi', 'Orta', 'Orta Üstü', 'İleri']
+    : ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Upper Intermediate', 'Advanced']
+  const defaultDurations = locale === 'tr'
+    ? ['2 hafta', '3 ay', '3 ay', '3 ay', '3 ay', '2,5 ay']
+    : ['2 weeks', '3 months', '3 months', '3 months', '3 months', '2.5 months']
+
   return (
     <div className="pt-20">
       {/* Hero */}
@@ -122,10 +132,10 @@ export default async function ServicesPage() {
                 {ge.levels!.map((level, i) => {
                   const c = levelColors[i]
                   const cl = customLevels?.[i]
-                  const displayName = cl?.name ?? level.name
-                  const displayGroup = cl?.group ?? level.group
+                  const displayName = cl?.name ?? generalEnglishNames[i] ?? level.name
+                  const displayGroup = cl?.group ?? generalEnglishGroups[i] ?? level.group
                   const displayHours = cl?.hours ?? String(level.hours)
-                  const displayDuration = cl?.duration ?? (level.duration !== '—' ? level.duration : '2 weeks')
+                  const displayDuration = cl?.duration ?? defaultDurations[i] ?? (level.duration !== '—' ? level.duration : locale === 'tr' ? '2 hafta' : '2 weeks')
                   const displayDescription = cl?.description ?? levelDescriptions[i]?.description ?? level.description
                   return (
                     <AnimatedSection key={level.name} delay={i * 0.08} className="h-[360px] md:h-[380px]">
@@ -162,10 +172,10 @@ export default async function ServicesPage() {
                                 style={{ backgroundColor: c.surface }}
                               >
                                 <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500">
-                                  Study Load
+                                  {locale === 'tr' ? 'Ders Yükü' : 'Study Load'}
                                 </div>
                                 <span className="text-base md:text-[1.4rem] font-extrabold block mt-0.5" style={{ color: c.bg }}>
-                                  {displayHours} hrs
+                                  {displayHours} {locale === 'tr' ? 'saat' : 'hrs'}
                                 </span>
                               </div>
                             </div>
@@ -183,7 +193,7 @@ export default async function ServicesPage() {
                               <Clock className="w-3.5 h-3.5" style={{ color: c.bg }} />
                             </div>
                             <div>
-                              <div className="text-[10px] uppercase tracking-[0.14em] text-gray-400">Duration</div>
+                              <div className="text-[10px] uppercase tracking-[0.14em] text-gray-400">{locale === 'tr' ? 'Süre' : 'Duration'}</div>
                               <div className="text-[13px] font-medium text-gray-600">
                                 {displayDuration}
                               </div>
@@ -193,7 +203,7 @@ export default async function ServicesPage() {
                                 className="ml-auto rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
                                 style={{ color: c.bg, backgroundColor: c.surface }}
                               >
-                                Free
+                                {locale === 'tr' ? 'Ücretsiz' : 'Free'}
                               </span>
                             )}
                           </div>

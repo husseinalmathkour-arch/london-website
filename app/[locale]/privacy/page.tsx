@@ -10,7 +10,7 @@ export default async function PrivacyPage() {
   const locale = await getLocale()
   const isTR = locale === 'tr'
 
-  const lastUpdated = '29 March 2026'
+  const lastUpdated = isTR ? '29 Mart 2026' : '29 March 2026'
 
   if (isTR) {
     return (
@@ -33,7 +33,7 @@ export default async function PrivacyPage() {
               <div className="mt-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 text-sm">
                 <p className="font-semibold text-gray-900 dark:text-white">London Language Academy</p>
                 <p>Covent Garden, Londra, Birleşik Krallık</p>
-                <p>E-posta: <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a></p>
+                <p>E-posta: <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a></p>
               </div>
             </section>
 
@@ -43,7 +43,7 @@ export default async function PrivacyPage() {
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Ad ve soyad</li>
                 <li>E-posta adresi ve telefon numarası</li>
-                <li>Sorgu ve mesaj içerikleri</li>
+                <li>Başvuru ve mesaj içerikleri</li>
                 <li>Dil tercihleri ve ilgi alanları</li>
                 <li>Seviye testi sonuçları</li>
                 <li>Web sitesi kullanım verileri (çerezler aracılığıyla)</li>
@@ -75,7 +75,7 @@ export default async function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">6. Veri Saklama</h2>
-              <p>İletişim formlarından elde edilen verileri, sorgunuz çözümlendikten sonra 2 yıl süreyle saklarız. Öğrenci kayıt verileri, yasal gereklilikler doğrultusunda 7 yıl süreyle muhafaza edilir.</p>
+              <p>İletişim formlarından elde edilen verileri, başvurunuz sonuçlandıktan sonra 2 yıl süreyle saklarız. Öğrenci kayıt verileri, yasal gereklilikler doğrultusunda 7 yıl süreyle muhafaza edilir.</p>
             </section>
 
             <section>
@@ -89,7 +89,7 @@ export default async function PrivacyPage() {
                 <li>Veri taşınabilirliği hakkı</li>
                 <li>İtiraz etme hakkı</li>
               </ul>
-              <p className="mt-3">Bu haklarınızı kullanmak için <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a> adresine e-posta gönderin. Talebinizi 30 gün içinde yanıtlarız.</p>
+              <p className="mt-3">Bu haklarınızı kullanmak için <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a> adresine e-posta gönderin. Talebinizi 30 gün içinde yanıtlarız.</p>
             </section>
 
             <section>
@@ -137,7 +137,7 @@ export default async function PrivacyPage() {
             <div className="mt-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-5 text-sm">
               <p className="font-semibold text-gray-900 dark:text-white">London Language Academy</p>
               <p>Covent Garden, London, United Kingdom</p>
-              <p>Email: <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a></p>
+              <p>Email: <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a></p>
             </div>
           </section>
 
@@ -147,7 +147,7 @@ export default async function PrivacyPage() {
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>First and last name</li>
               <li>Email address and phone number</li>
-              <li>Enquiry and message content</li>
+              <li>Enquiry and message contents</li>
               <li>Language preferences and areas of interest</li>
               <li>Level test results</li>
               <li>Website usage data (via cookies)</li>
@@ -179,7 +179,7 @@ export default async function PrivacyPage() {
 
           <section>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">6. Data Retention</h2>
-            <p>We retain contact form data for 2 years after your enquiry is resolved. Student enrolment data is kept for 7 years in line with legal requirements.</p>
+            <p>We retain contact form data for 2 years after your enquiry has been resolved. Student enrolment data is kept for 7 years in line with legal requirements.</p>
           </section>
 
           <section>
@@ -193,7 +193,7 @@ export default async function PrivacyPage() {
               <li>Data portability</li>
               <li>Object to processing</li>
             </ul>
-            <p className="mt-3">To exercise any of these rights, email us at <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a>. We will respond within 30 days.</p>
+            <p className="mt-3">To exercise any of these rights, email us at <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a>. We will respond within 30 days.</p>
           </section>
 
           <section>

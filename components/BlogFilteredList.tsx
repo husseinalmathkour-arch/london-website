@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import AnimatedSection from '@/components/AnimatedSection'
 import BlogCard from '@/components/BlogCard'
+import { useLocale } from 'next-intl'
 
 interface Post {
   id: string
@@ -33,6 +34,7 @@ interface Props {
 }
 
 export default function BlogFilteredList({ posts, categories, featuredLabel, readMoreLabel, hrefPrefix = '/blog' }: Props) {
+  const locale = useLocale()
   const [active, setActive] = useState('all')
 
   const filtered = active === 'all' ? posts : posts.filter(p => p.category === active)
@@ -89,7 +91,7 @@ export default function BlogFilteredList({ posts, categories, featuredLabel, rea
             </div>
           ) : filtered.length === 0 ? (
             <p className="text-center text-gray-500 dark:text-gray-400 py-16">
-              No posts found in this category.
+              {locale === 'tr' ? 'Bu kategoride yazı bulunamadı.' : 'No posts found in this category.'}
             </p>
           ) : null}
         </div>

@@ -57,16 +57,6 @@ interface Answer {
   isCorrect: boolean
 }
 
-function getResult(score: number, total: number) {
-  const pct = (score / total) * 100
-  if (pct < 20) return { level: 'A1', label: 'Beginner', color: 'text-red-600 dark:text-red-400', bg: 'bg-red-50 dark:bg-red-950/30', desc: 'You are just starting your English journey. Our A1 Beginner course is the perfect place to begin — no prior knowledge required!' }
-  if (pct < 35) return { level: 'A2', label: 'Elementary', color: 'text-orange-600 dark:text-orange-400', bg: 'bg-orange-50 dark:bg-orange-950/30', desc: 'You have a basic foundation. Our A2 Elementary course will expand your vocabulary and grammar, building real conversational confidence.' }
-  if (pct < 50) return { level: 'B1', label: 'Intermediate', color: 'text-yellow-600 dark:text-yellow-400', bg: 'bg-yellow-50 dark:bg-yellow-950/30', desc: 'You can handle many everyday situations. Our B1 Intermediate course will take your fluency and accuracy to the next level.' }
-  if (pct < 65) return { level: 'B2', label: 'Upper-Intermediate', color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-950/30', desc: 'You communicate effectively in most situations. Our B2 course — including Cambridge B2 First preparation — is ideal for you.' }
-  if (pct < 80) return { level: 'C1', label: 'Advanced', color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/30', desc: 'You speak and write with high fluency. Our C1 Advanced course will refine your precision and prepare you for Cambridge C1.' }
-  return { level: 'C2', label: 'Proficiency', color: 'text-indigo-600 dark:text-indigo-400', bg: 'bg-indigo-50 dark:bg-indigo-950/30', desc: 'Exceptional! You are at near-native proficiency. Our C2 Proficiency course or Cambridge C2 preparation programme is the pinnacle.' }
-}
-
 export default function LevelTestPageClient({ branches }: { branches: Branch[] }) {
   const t = useTranslations('levelTest')
   const locale = useLocale()
@@ -104,6 +94,16 @@ export default function LevelTestPageClient({ branches }: { branches: Branch[] }
 
   const currentQuestion = questions[currentIndex]
   const totalQuestions = questions.length
+
+  function getResult(score: number, total: number) {
+    const pct = (score / total) * 100
+    if (pct < 20) return { level: 'A1', label: t('results.a1.label'), color: 'text-red-600 dark:text-red-400', bg: 'bg-red-50 dark:bg-red-950/30', desc: t('results.a1.desc') }
+    if (pct < 35) return { level: 'A2', label: t('results.a2.label'), color: 'text-orange-600 dark:text-orange-400', bg: 'bg-orange-50 dark:bg-orange-950/30', desc: t('results.a2.desc') }
+    if (pct < 50) return { level: 'B1', label: t('results.b1.label'), color: 'text-yellow-600 dark:text-yellow-400', bg: 'bg-yellow-50 dark:bg-yellow-950/30', desc: t('results.b1.desc') }
+    if (pct < 65) return { level: 'B2', label: t('results.b2.label'), color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-950/30', desc: t('results.b2.desc') }
+    if (pct < 80) return { level: 'C1', label: t('results.c1.label'), color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/30', desc: t('results.c1.desc') }
+    return { level: 'C2', label: t('results.c2.label'), color: 'text-indigo-600 dark:text-indigo-400', bg: 'bg-indigo-50 dark:bg-indigo-950/30', desc: t('results.c2.desc') }
+  }
 
   // 30-second timer per question
   useEffect(() => {
@@ -343,7 +343,7 @@ export default function LevelTestPageClient({ branches }: { branches: Branch[] }
                 onClick={handleFormSubmit}
                 className="w-full mt-6 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-500/20"
               >
-                Start Test <ChevronRight className="w-5 h-5" />
+                {t('startTest')} <ChevronRight className="w-5 h-5" />
               </button>
 
               <p className="text-xs text-center text-gray-400 dark:text-gray-500 mt-4">

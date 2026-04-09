@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { useLocale } from 'next-intl'
 import type { BlogPost } from '@/lib/data'
 
 interface BlogCardProps {
@@ -11,7 +14,8 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, featured = false, readMoreLabel = 'Read', href }: BlogCardProps) {
-  const formattedDate = new Date(post.date).toLocaleDateString('en-GB', {
+  const locale = useLocale()
+  const formattedDate = new Date(post.date).toLocaleDateString(locale === 'tr' ? 'tr-TR' : 'en-GB', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

@@ -4,7 +4,7 @@
     "about": "Hakkımızda",
     "services": "Hizmetler",
     "languages": "Diller",
-    "studyAbroad": "Yurt Dışında Eğitim",
+    "studyAbroad": "Yurt Dışı Eğitim",
     "levelTest": "Seviye Testi",
     "blog": "Blog",
     "faq": "Sık Sorulan Sorular",
@@ -39,12 +39,12 @@
     "heroLabel": "LLA Hakkında",
     "heroHeading": "Yolculuğunuzun Başladığı Yer",
     "heroDescription": "London Language Academy, Londra'da yaklaşık yüz yıldır dil eğitiminin köklü bir temsilcisidir. Bu köklü mirası 2021 yılında Türkiye'ye taşıyarak Bursa'da ilk merkezimizi açtık.",
-    "heroBody": "Yenilikçi ve özgün eğitim sistemimizle fark yaratıyoruz — Bursa ve İstanbul merkezlerimizde native speaker eğitmenler, sonsuz aktiviteler ve ömür boyu eğitim desteği sunuyoruz.",
+    "heroBody": "Yenilikçi ve özgün eğitim sistemimizle fark yaratıyoruz. Bursa ve İstanbul merkezlerimizde ana dili İngilizce olan eğitmenler, zengin etkinlik programları ve ömür boyu eğitim desteği sunuyoruz.",
     "missionLabel": "Misyonumuz",
     "missionText": "Misyonumuz, dil öğrenme sürecini etkili, eğlenceli ve kişiselleştirilmiş bir deneyim haline getirerek, öğrencilerimizin kişisel ve profesyonel hedeflerine ulaşmalarına yardımcı olmaktır. Deneyimli eğitmenlerimiz ve yenilikçi eğitim yöntemlerimizle, her öğrencinin dil becerilerini en üst düzeye çıkarmayı hedefliyoruz.",
     "visionLabel": "Vizyonumuz",
     "visionText": "Vizyonumuz, ulusal ve uluslararası düzeyde dil öğrenme süreçlerini dönüştüren bir eğitim kurumu olmaktır. Bursa ve İstanbul'daki merkezlerimizle, dil öğrenme yolculuğunuzda size en iyi desteği sunarak, küresel bir perspektif kazanmanızı ve kültürel sınırları aşmanızı sağlıyoruz.",
-    "valuesLabel": "Neyin Savunucusuyuz",
+    "valuesLabel": "Neye İnanıyoruz",
     "valuesHeading": "Temel Değerlerimiz",
     "teamLabel": "Ekibimiz",
     "teamHeading": "Liderlik Ekibimizle Tanışın",
@@ -117,7 +117,7 @@
     "whatsIncludedLabel": "Tüm Kurslara Dahil",
     "whatsIncludedHeading": "Başarı İçin İhtiyacınız Olan Her Şey",
     "whatsIncludedBody": "London Language Academy'ye kaydolduğunuzda, sadece sınıf saatinden çok daha fazlasını elde edersiniz. Her kurs, kapsamlı bir destek, kaynak ve fırsat paketi ile birlikte gelir.",
-    "notSureHeading": "Hangi kurs olduğundan emin değil misin?",
+    "notSureHeading": "Hangi kursun size uygun olduğundan emin değil misiniz?",
     "notSureBody": "Akademik danışmanlarımız size doğru kursu seçmenizde yardımcı olmak için burada. Ücretsiz 30 dakikalık danışma görüşmesi ayırtın — hiçbir yükümlülük yoktur.",
     "courseGuide": [
       { "question": "Günlük hayat için İngilizce mi gerekiyor?", "answer": "Genel İngilizce tam size göre." },
@@ -203,7 +203,7 @@
       "Önceden bilgi gerekmez. Selamlaşmayı, temel kelimeleri ve basit cümleleri öğreneceksiniz.",
       "Temel ifadeleri anlıyor ve basit, tanıdık durumlarda iletişim kurabiliyorsunuz.",
       "Seyahat ederken karşılaşabileceğiniz çoğu durumla başa çıkabilir ve deneyimlerinizi anlatabilirsiniz.",
-      "Ana dili İngilizce olan kişilerle akıcı bir şekilde, zorlanmadan etkileşime girebilirsiniz.",
+      "Ana dili İngilizce olan kişilerle akıcı ve rahat bir şekilde iletişim kurabilirsiniz.",
       "Fikirleri, kelime aramak zorunda kalmadan akıcı ve kendiliğinden ifade edebilirsiniz.",
       "Karmaşık durumlarda kendinizi kendiliğinden, çok akıcı ve kesin bir şekilde ifade edebilirsiniz."
     ],
@@ -226,20 +226,20 @@
     }
   },
   "studyAbroad": {
-    "heroLabel": "Yurtdışı Eğitim",
+    "heroLabel": "Yurt Dışı Eğitim",
     "heroHeading": "Dil Aracılığıyla Dünyayı Keşfedin",
-    "heroDescription": "12 farklı ülkede yurtdışı eğitim danışmanlığı sunuyoruz — dil kurslarından yaz okullarına, akademik yerleştirmelerden staj ve Work & Travel programlarına kadar.",
+    "heroDescription": "12 farklı ülkede yurt dışı eğitim danışmanlığı sunuyoruz. Dil kurslarından yaz okullarına, akademik yerleştirmelerden staj ve Work & Travel programlarına kadar her aşamada yanınızdayız.",
     "applyNow": "Başvur",
     "browseLabel": "Programları Keşfet",
     "programmesLabel": "Programlarımız",
-    "programmesHeading": "Yurtdışı Yolculuğunuzu Seçin",
+    "programmesHeading": "Yurt Dışı Yolculuğunuzu Seçin",
     "programmesBody": "2 haftalık dil kursundan tam akademik döneme kadar — her adımda yanınızdayız.",
     "consultingLabel": "Danışmanlık",
     "consultingHeading": "Her Adımda Uzman Rehberlik",
     "consultingBody": "Tüm departmanlarımızdaki danışmanlarımız, ihtiyaçlarınıza, bütçenize ve hedeflerinize göre en uygun seçimi yapmanızı sağlamak için size en doğru, pratik ve gerçekçi bilgileri sunar.",
     "contactUs": "Bize Ulaşın",
     "ctaTitle": "Uluslararası Yolculuğunuza Başlamaya Hazır mısınız?",
-    "ctaDescription": "Yurtdışı eğitim ekibimizle bugün ücretsiz danışmanlık randevusu alın.",
+    "ctaDescription": "Yurt dışı eğitim ekibimizle bugün ücretsiz danışmanlık randevusu alın.",
     "ctaPrimary": "Ücretsiz Danışmanlık Al",
     "ctaSecondary": "Tüm Kursları Gör",
     "highlights": "Öne Çıkanlar",
@@ -247,7 +247,7 @@
     "programmes": [
       {
         "id": "language",
-        "title": "Yurtdışında Dil Eğitimi",
+        "title": "Yurt Dışında Dil Eğitimi",
         "badge": "12 Ülke",
         "description": "Dili doğal ortamında öğrenin. Genel & Yoğun İngilizce, İş İngilizcesi, IELTS/TOEFL/GRE/GMAT hazırlık, Akademik Dönem ve uzmanlık kursları (Hukuk, Tıp, Öğretmen Eğitimi) sunuyoruz. Programlar 2–44 hafta sürmekte olup genellikle her Pazartesi başlamaktadır. Minimum yaş 16; 30+ için özel programlar mevcuttur.",
         "highlights": [
@@ -277,7 +277,7 @@
         "id": "academic",
         "title": "Akademik Yerleştirme",
         "badge": "Üniversite & Lise",
-        "description": "Danışmanlarımız, yurtdışında okul veya üniversiteye yerleşme sürecinin her adımında size rehberlik eder — doğru ülke ve program seçiminden konaklama, burs ve vize başvurularına kadar. İngiltere, ABD, Kanada, Avustralya, İrlanda, Almanya, İtalya ve daha fazlasını kapsıyoruz.",
+        "description": "Danışmanlarımız, yurt dışında okul veya üniversiteye yerleşme sürecinin her adımında size rehberlik eder. Doğru ülke ve program seçiminden konaklama, burs ve vize başvurularına kadar tüm aşamalarda yanınızdayız. İngiltere, ABD, Kanada, Avustralya, İrlanda, Almanya, İtalya ve daha fazlasını kapsıyoruz.",
         "highlights": [
           "Lise & üniversite",
           "İngiltere, ABD, Kanada, Avustralya",
@@ -355,7 +355,7 @@
     "questionOf": "{current}. Soru / {total} Toplam",
     "level": "Seviye",
     "yourResults": "Sonuçlarınız",
-    "youScored": "{score}/{total} doğru cevap verdинiz",
+    "youScored": "{score}/{total} doğru cevap verdiniz",
     "questionBreakdown": "Soru Dağılımı",
     "correct": "Doğru",
     "incorrect": "Yanlış",
@@ -440,7 +440,7 @@
       "career": "Kariyer",
       "learningScience": "Öğrenme Bilimi",
       "studentLife": "Öğrenci Hayatı",
-      "studyAbroad": "Yurt Dışında Eğitim"
+      "studyAbroad": "Yurt Dışı Eğitim"
     }
   },
   "faq": {
@@ -461,7 +461,7 @@
       "General": "Genel",
       "Courses": "Kurslar",
       "Teachers": "Öğretmenler",
-      "Study Abroad": "Yurtdışı Eğitim"
+      "Study Abroad": "Yurt Dışı Eğitim"
     },
     "items": [
       { "id": "1", "category": "General", "question": "London Language Academy nerede bulunuyor?", "answer": "Ana okulumuz yaklaşık 100 yıldır Londra'nın merkezinde yer almaktadır. Ayrıca 2021 yılında Türkiye'de Bursa ve İstanbul'da şubelerimiz açıldı. Her üç lokasyonda da aynı yüksek kaliteli dil eğitimi sunulmaktadır.", "answerHtml": "Ana okulumuz yaklaşık 100 yıldır <strong class=\"faq-highlight\">Londra'nın merkezinde</strong> yer almaktadır. Ayrıca 2021 yılında <strong class=\"faq-highlight\">Türkiye'de Bursa ve İstanbul'da</strong> şubelerimiz açıldı. Her üç lokasyonda da aynı yüksek kaliteli dil eğitimi sunulmaktadır." },
@@ -471,7 +471,7 @@
       { "id": "5", "category": "General", "question": "Bir dili öğrenmek ne kadar sürer?", "answer": "Bir dili öğrenmek için kesin bir süre yoktur, çünkü hayatımız boyunca sürekli olarak yeni bilgiler ediniriz. Ancak, bir dile yoğun bir şekilde çalışırsanız, genellikle 3 ila 6 ay içinde konuşma becerisi kazanabilirsiniz. London Language Academy olarak, bu süreci hızlandırmayı hedefliyoruz.", "answerHtml": "Bir dili öğrenmek için kesin bir süre yoktur, çünkü hayatımız boyunca sürekli olarak yeni bilgiler ediniriz. Ancak, bir dile yoğun bir şekilde çalışırsanız, genellikle <strong class=\"faq-highlight\">3 ila 6 ay</strong> içinde konuşma becerisi kazanabilirsiniz. <strong class=\"faq-highlight\">London Language Academy</strong> olarak, bu süreci hızlandırmayı hedefliyoruz." },
       { "id": "6", "category": "General", "question": "Sınıflarınız kaç kişilik?", "answer": "Sınıflarımız 7-14 kişilik.", "answerHtml": "Sınıflarımız <strong class=\"faq-highlight\">7-14 kişilik</strong>." },
       { "id": "7", "category": "General", "question": "Derste Türkçe konuşuluyor mu?", "answer": "Derslerimiz tamamen %100 İngilizce işleniyor.", "answerHtml": "Derslerimiz tamamen <strong class=\"faq-highlight\">%100 İngilizce</strong> işleniyor." },
-      { "id": "8", "category": "General", "question": "Eğitim için yurtdışına öğrenci gönderiyor musunuz?", "answer": "Dil eğitimi programı, yaz okulu, akademik yerleştirme programı, staj programı ve Work & Travel şeklinde yurtdışına öğrenci gönderiyoruz.", "answerHtml": "<em><strong class=\"faq-highlight\">Dil eğitimi programı, yaz okulu, akademik yerleştirme programı, staj programı ve Work &amp; Travel</strong></em> şeklinde yurtdışına öğrenci gönderiyoruz." },
+      { "id": "8", "category": "General", "question": "Eğitim için yurt dışına öğrenci gönderiyor musunuz?", "answer": "Dil eğitimi programı, yaz okulu, akademik yerleştirme programı, staj programı ve Work & Travel kapsamında yurt dışına öğrenci gönderiyoruz.", "answerHtml": "<em><strong class=\"faq-highlight\">Dil eğitimi programı, yaz okulu, akademik yerleştirme programı, staj programı ve Work &amp; Travel</strong></em> kapsamında yurt dışına öğrenci gönderiyoruz." },
       { "id": "9", "category": "Courses", "question": "Bir kursa nasıl kayıt olabilirim?", "answer": "Kayıt olmak çok kolay. Web sitemizdeki ücretsiz seviye testini alarak seviyenizi öğrenin, ardından bize kayıt formu aracılığıyla ulaşın veya doğrudan arayın. Ekibimiz kayıt sürecinde size rehberlik edecek ve başlamanıza yardımcı olacaktır.", "answerHtml": "Kayıt olmak çok kolay. Web sitemizdeki <strong class=\"faq-highlight\">ücretsiz seviye testini</strong> alarak seviyenizi öğrenin, ardından bize kayıt formu aracılığıyla ulaşın veya doğrudan arayın. Ekibimiz <strong class=\"faq-highlight\">kayıt sürecinde</strong> size rehberlik edecek ve başlamanıza yardımcı olacaktır." },
       { "id": "10", "category": "Courses", "question": "Hangi gün hangi saat eğitimleriniz var?", "answer": "Pazartesi–Çarşamba, Salı–Perşembe ve Cumartesi–Pazar günleri ders yapılmaktadır. Seanslar sabah 09:00, öğleden sonra 13:00 ve akşam 19:00'da başlamaktadır.", "answerHtml": "<strong class=\"faq-highlight\">Pazartesi–Çarşamba, Salı–Perşembe ve Cumartesi–Pazar</strong> günleri ders yapılmaktadır. Seanslar <strong class=\"faq-highlight\">09:00, 13:00 ve 19:00</strong>'da başlamaktadır." },
       { "id": "11", "category": "Courses", "question": "Telafi dersleri var mı?", "answer": "Genel ve özel telafi şeklinde telafilerimiz mevcuttur.", "answerHtml": "<strong class=\"faq-highlight\">Genel ve özel</strong> telafi şeklinde telafilerimiz mevcuttur." },
@@ -484,10 +484,10 @@
       { "id": "18", "category": "Courses", "question": "Resmi sınavlara hazırlık yapıyor musunuz?", "answer": "Evet. IELTS, Cambridge B2 First, C1 Advanced ve C2 Proficiency ile diğer uluslararası tanınan sertifikalar için özel hazırlık kursları sunuyoruz.", "answerHtml": "Evet. <strong class=\"faq-highlight\">IELTS, Cambridge B2 First, C1 Advanced</strong> ve <strong class=\"faq-highlight\">C2 Proficiency</strong> ile diğer uluslararası tanınan sertifikalar için özel hazırlık kursları sunuyoruz." },
       { "id": "19", "category": "Teachers", "question": "Hocalarınız yabancı mı?", "answer": "Freshman (A1–A2) → Türk hoca (iletişim problemi yaşanmaması adına). Climber (A2–B1) → Türk ve yabancı hoca. Transactional (B1+) ve tüm üst seviyeler → Yalnızca yabancı hocalarımız ders işlemektedir.", "answerHtml": "<strong class=\"faq-highlight\">Freshman (A1–A2)</strong> → Türk hoca (iletişim problemi yaşanmaması adına)<br/><strong class=\"faq-highlight\">Climber (A2–B1)</strong> → Türk ve yabancı hoca<br/><strong class=\"faq-highlight\">Transactional (B1+) ve tüm üst seviyeler</strong> → Yalnızca yabancı hocalarımız ders işlemektedir." },
       { "id": "20", "category": "Teachers", "question": "Hocalarınızın nitelikleri neler?", "answer": "Tüm öğretmenlerimiz deneyimli ve nitelikli dil eğitimcileridir. Ana dili İngilizce olan ve olmayan öğretmenler, yüksek öğretim standartlarımızı karşıladıklarından emin olmak için titiz bir süreçten geçirilmektedir. Her öğretmen sürekli mesleki gelişime tabi tutulmaktadır.", "answerHtml": "Tüm öğretmenlerimiz <strong class=\"faq-highlight\">deneyimli ve nitelikli dil eğitimcileridir</strong>. Öğretmenler, yüksek öğretim standartlarımızı karşıladıklarından emin olmak için <strong class=\"faq-highlight\">titiz bir süreçten</strong> geçirilmektedir. Her öğretmen <strong class=\"faq-highlight\">sürekli mesleki gelişime</strong> tabi tutulmaktadır." },
-      { "id": "21", "category": "Study Abroad", "question": "Hangi yurtdışı programları sunuyorsunuz?", "answer": "Beş program sunuyoruz: Dil Eğitimi Programı, Yaz Okulu, Akademik Yerleştirme, Work & Travel ve Staj Programı. Her program farklı hedefler, süreler ve yaş gruplarına göre tasarlanmıştır.", "answerHtml": "Beş program sunuyoruz: <strong class=\"faq-highlight\">Dil Eğitimi Programı, Yaz Okulu, Akademik Yerleştirme, Work &amp; Travel</strong> ve <strong class=\"faq-highlight\">Staj Programı</strong>. Her program farklı hedefler, süreler ve yaş gruplarına göre tasarlanmıştır." },
-      { "id": "22", "category": "Study Abroad", "question": "Yurtdışı programlarına kimler başvurabilir?", "answer": "Yurtdışı programlarımız her seviyedeki öğrenciye açıktır. İster başlangıç ister ileri seviyede olun, size uygun bir program bulunmaktadır. Staj ve akademik yerleştirme gibi bazı programlar minimum bir seviye gerektirebilir.", "answerHtml": "Yurtdışı programlarımız <strong class=\"faq-highlight\">her seviyedeki öğrenciye</strong> açıktır. İster başlangıç ister ileri seviyede olun, size uygun bir program bulunmaktadır. <strong class=\"faq-highlight\">Staj ve akademik yerleştirme</strong> gibi bazı programlar minimum bir seviye gerektirebilir." },
-      { "id": "23", "category": "Study Abroad", "question": "Yurtdışı programına nasıl başvurabilirim?", "answer": "Yurtdışı Eğitim sayfasındaki kayıt formu aracılığıyla bize ulaşmanız yeterlidir. Ekibimiz mevcut seçenekleri açıklayacak, hedeflerinize en uygun programı seçmenize yardımcı olacak ve başvuru sürecinin her adımında size rehberlik edecektir.", "answerHtml": "<strong class=\"faq-highlight\">Yurtdışı Eğitim sayfasındaki kayıt formu</strong> aracılığıyla bize ulaşmanız yeterlidir. Ekibimiz, başvuru sürecinin <strong class=\"faq-highlight\">her adımında size rehberlik edecektir</strong>." },
-      { "id": "24", "category": "Study Abroad", "question": "Yurtdışı programlarında konaklama dahil mi?", "answer": "Evet. Konaklama düzenlemeleri her programın bir parçası olarak dahil edilmekte veya koordine edilmektedir. Gidilecek ülke ve program türüne bağlı olarak ev sahibi aileler, öğrenci yurtları veya paylaşımlı daireler gibi seçenekler sunulabilmektedir.", "answerHtml": "Evet. <strong class=\"faq-highlight\">Konaklama düzenlemeleri dahil edilmekte veya koordine edilmektedir</strong>. Seçenekler arasında <strong class=\"faq-highlight\">ev sahibi aileler, öğrenci yurtları veya paylaşımlı daireler</strong> yer almaktadır." },
+      { "id": "21", "category": "Study Abroad", "question": "Hangi yurt dışı programlarını sunuyorsunuz?", "answer": "Beş program sunuyoruz: Dil Eğitimi Programı, Yaz Okulu, Akademik Yerleştirme, Work & Travel ve Staj Programı. Her program farklı hedefler, süreler ve yaş gruplarına göre tasarlanmıştır.", "answerHtml": "Beş program sunuyoruz: <strong class=\"faq-highlight\">Dil Eğitimi Programı, Yaz Okulu, Akademik Yerleştirme, Work &amp; Travel</strong> ve <strong class=\"faq-highlight\">Staj Programı</strong>. Her program farklı hedefler, süreler ve yaş gruplarına göre tasarlanmıştır." },
+      { "id": "22", "category": "Study Abroad", "question": "Yurt dışı programlarına kimler başvurabilir?", "answer": "Yurt dışı programlarımız her seviyedeki öğrenciye açıktır. İster başlangıç ister ileri seviyede olun, size uygun bir program bulunmaktadır. Staj ve akademik yerleştirme gibi bazı programlar minimum bir seviye gerektirebilir.", "answerHtml": "Yurt dışı programlarımız <strong class=\"faq-highlight\">her seviyedeki öğrenciye</strong> açıktır. İster başlangıç ister ileri seviyede olun, size uygun bir program bulunmaktadır. <strong class=\"faq-highlight\">Staj ve akademik yerleştirme</strong> gibi bazı programlar minimum bir seviye gerektirebilir." },
+      { "id": "23", "category": "Study Abroad", "question": "Yurt dışı programına nasıl başvurabilirim?", "answer": "Yurt Dışı Eğitim sayfasındaki kayıt formu aracılığıyla bize ulaşmanız yeterlidir. Ekibimiz mevcut seçenekleri açıklayacak, hedeflerinize en uygun programı seçmenize yardımcı olacak ve başvuru sürecinin her adımında size rehberlik edecektir.", "answerHtml": "<strong class=\"faq-highlight\">Yurt Dışı Eğitim sayfasındaki kayıt formu</strong> aracılığıyla bize ulaşmanız yeterlidir. Ekibimiz, başvuru sürecinin <strong class=\"faq-highlight\">her adımında size rehberlik edecektir</strong>." },
+      { "id": "24", "category": "Study Abroad", "question": "Yurt dışı programlarında konaklama dahil mi?", "answer": "Evet. Konaklama düzenlemeleri her programın bir parçası olarak dahil edilmekte veya koordine edilmektedir. Gidilecek ülke ve program türüne bağlı olarak ev sahibi aileler, öğrenci yurtları veya paylaşımlı daireler gibi seçenekler sunulabilmektedir.", "answerHtml": "Evet. <strong class=\"faq-highlight\">Konaklama düzenlemeleri dahil edilmekte veya koordine edilmektedir</strong>. Seçenekler arasında <strong class=\"faq-highlight\">ev sahibi aileler, öğrenci yurtları veya paylaşımlı daireler</strong> yer almaktadır." },
       { "id": "25", "category": "Study Abroad", "question": "Hangi ülkelere öğrenci gönderiyorsunuz?", "answer": "Öğrencileri İngiltere, İrlanda, Malta, ABD, Kanada, Avustralya ve daha pek çok ülkeye gönderiyoruz. Mevcut destinasyonlar program türüne göre değişmektedir. Şu anda açık olan destinasyonları öğrenmek için bize ulaşın.", "answerHtml": "Öğrencileri <strong class=\"faq-highlight\">İngiltere, İrlanda, Malta, ABD, Kanada, Avustralya</strong> ve daha pek çok ülkeye gönderiyoruz. Mevcut destinasyonlar program türüne göre değişmektedir. Şu anda açık olan destinasyonları öğrenmek için bize ulaşın." }
     ]
   },
@@ -501,28 +501,28 @@
     "lastName": "Soyad",
     "emailAddress": "E-posta Adresi",
     "phone": "Telefon (isteğe bağlı)",
-    "enquiryType": "Sorgu Türü",
+    "enquiryType": "İletişim Konusu",
     "languageOfInterest": "İlgilendiğiniz Dil",
     "message": "Mesaj",
     "messagePlaceholder": "Hedefleriniz, mevcut seviyeniz, müsaitliğiniz ve varsa özel sorularınız hakkında bize bilgi verin...",
-    "consent": "London Language Academy'nin verilerimi saklamasına ve sorgum hakkında benimle iletişime geçmesine izin veriyorum. İstediğim zaman abonelikten çıkabileceğimi anlıyorum. Gizlilik Politikamızı görüntüleyin.",
+    "consent": "London Language Academy'nin verilerimi saklamasına ve başvurum hakkında benimle iletişime geçmesine izin veriyorum. İstediğim zaman abonelikten çıkabileceğimi anlıyorum. Gizlilik Politikamızı görüntüleyin.",
     "sendMessageBtn": "Mesaj Gönder",
     "sending": "Gönderiliyor...",
     "messageSent": "Mesaj Gönderildi!",
-    "messageSentBody": "Bize ulaştığınız için teşekkür ederiz. Kabul ekibimizden bir üye sorgunuzu en geç bir iş günü içinde yanıtlayacaktır.",
+    "messageSentBody": "Bize ulaştığınız için teşekkür ederiz. Kabul ekibimizden bir üye başvurunuzu en geç bir iş günü içinde yanıtlayacaktır.",
     "sendAnother": "Başka bir mesaj gönder",
     "responseTime": "Genellikle 1 iş günü içinde yanıt veriyoruz. Acil mi? +44 (0)20 1234 5678'i arayın.",
     "selectType": "Tür seçin...",
     "selectLanguage": "Dil seçin...",
     "required": "Zorunlu",
     "validEmail": "Geçerli e-posta adresi gerekli",
-    "selectEnquiryType": "Lütfen bir sorgu türü seçin",
+    "selectEnquiryType": "Lütfen bir iletişim konusu seçin",
     "messageTooShort": "Lütfen daha fazla bilgi verin (en az 20 karakter)",
     "consentRequired": "Devam etmek için lütfen kabul edin",
     "quickLinks": "Hızlı Bağlantılar",
     "mainCampus": "Ana Kampüs",
     "fastResponse": "Hızlı Yanıt",
-    "fastResponseDesc": "Tüm sorguları en geç 1 iş günü içinde yanıtlarız",
+    "fastResponseDesc": "Tüm başvuruları en geç 1 iş günü içinde yanıtlarız",
     "expertAdvice": "Uzman Tavsiyesi",
     "expertAdviceDesc": "Bir sohbet botundan değil, doğrudan akademik danışmanlarımızdan konuşun",
     "noPressure": "Baskısız Ortam",
@@ -534,7 +534,7 @@
       "business": "İş Dili",
       "oneToOne": "Birebir Özel Ders",
       "online": "Çevrimiçi Kurslar",
-      "studyAbroad": "Yurtdışı Eğitim",
+      "studyAbroad": "Yurt Dışı Eğitim",
       "corporate": "Kurumsal Eğitim",
       "visa": "Öğrenci Vizesi",
       "accommodation": "Konaklama",
@@ -620,7 +620,7 @@
       "role": "MBA Öğrencisi",
       "country": "İstanbul — Avcılar",
       "avatar": "AK",
-      "text": "Üniversite başvurum için IELTS 7.5e ihtiyacım vardı ve 6.5te takılıp kalmıştım. LLAnın sınav hazırlık kursuyla sadece sekiz haftada 7.5e ulaştım. Deneme sınavları ve kişiselleştirilmiş geri bildirimler çok etkili oldu.",
+      "text": "Üniversite başvurum için IELTS 7.5'e ihtiyacım vardı ve 6.5'te takılıp kalmıştım. LLA'nın sınav hazırlık kursuyla sadece sekiz haftada 7.5'e ulaştım. Deneme sınavları ve kişiselleştirilmiş geri bildirimler çok etkili oldu.",
       "course": "IELTS Hazırlık"
     },
     {
@@ -683,7 +683,7 @@
         "A1 · A2 · B1 · B2 seviyeleri",
         "Seviye başına 3 ay · 96 saat",
         "Küçük gruplar (maks. 12)",
-        "Anadil ve nitelikli eğitmenler",
+        "Ana dili ilgili dil olan ve alanında uzman eğitmenler",
         "Tamamlamada seviye sertifikası"
       ]
     },
@@ -723,11 +723,11 @@
     },
     "general-english": {
       "title": "Genel İngilizce",
-      "description": "Mutlak başlangıçtan neredeyse anadil seviyesine götüren 6 aşamalı yapılandırılmış bir program. Küçük sınıflar, uzman öğretmenler ve kanıtlanmış müfredat.",
+      "description": "Tam başlangıç seviyesinden ileri akıcılığa taşıyan 6 aşamalı yapılandırılmış bir program. Küçük sınıflar, uzman eğitmenler ve kanıtlanmış bir müfredatla ilerlersiniz.",
       "features": [
         "6 seviye: Newcomer'dan Proficient'e",
         "Küçük gruplar (maks. 12)",
-        "Anadil konuşmacısı öğretmenler",
+        "Ana dili İngilizce olan öğretmenler",
         "Ücretsiz çalışma materyalleri",
         "Tamamlama sertifikası"
       ]
@@ -883,7 +883,7 @@
     "testimonialsLabel": "Öğrenci Hikayeleri",
     "testimonialsHeading": "Öğrencilerimizden Dinleyin",
     "testimonialsBody": "Gerçek insanlardan gerçek sonuçlar. Öğrencilerimizin başarısı yaptığımız her şeyin ölçütüdür.",
-    "studyAbroadLabel": "Yurt Dışında Eğitim Programı",
+    "studyAbroadLabel": "Yurt Dışı Eğitim Programı",
     "studyAbroadHeading": "Bir Dili Gerçekten Konuşulduğu Yerde Öğrenin",
     "studyAbroadBody": "İspanya, Fransa, Almanya, İtalya ve Portekiz'de daldırma programları. Gündüz uzman öğretim, akşam kültür ve macera.",
     "exploreProgrammes": "Programları Keşfet",
@@ -897,8 +897,8 @@
         "description": "Her ders ölçülebilir sonuçlar etrafında tasarlanmıştır. İlerlemenizi haftalık takip eder ve sürekli gelişimi sağlamak için müfredatı uyarlarız."
       },
       "expertTeachers": {
-        "title": "Uzman Ana Dil Konuşucuları",
-        "description": "Tüm öğretmenler CELTA, DELTA veya eşdeğer niteliklere sahiptir. Birçoğu eski Cambridge ve IELTS sınav gözetmenleridir; bu size eşsiz içeriden bilgi sağlar."
+        "title": "Uzman Eğitmenler",
+        "description": "Tüm öğretmenler CELTA, DELTA veya eşdeğer niteliklere sahiptir. Birçoğu eski Cambridge ve IELTS sınav görevlisidir; bu da size sınav süreçlerine dair değerli bir içgörü sağlar."
       },
       "smallClasses": {
         "title": "Küçük Sınıf Mevcutları",

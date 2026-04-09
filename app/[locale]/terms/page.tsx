@@ -10,7 +10,7 @@ export default async function TermsPage() {
   const locale = await getLocale()
   const isTR = locale === 'tr'
 
-  const lastUpdated = '29 March 2026'
+  const lastUpdated = isTR ? '29 Mart 2026' : '29 March 2026'
 
   if (isTR) {
     return (
@@ -79,7 +79,7 @@ export default async function TermsPage() {
 
             <section>
               <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">10. İletişim</h2>
-              <p>Bu koşullara ilişkin sorularınız için: <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a></p>
+              <p>Bu koşullara ilişkin sorularınız için: <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a></p>
             </section>
 
           </div>
@@ -154,7 +154,7 @@ export default async function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">10. Contact</h2>
-            <p>For any questions about these terms: <a href="mailto:info@londonlanguageacademy.net" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.net</a></p>
+            <p>For any questions about these terms: <a href="mailto:info@londonlanguageacademy.com" className="text-blue-600 dark:text-blue-400 hover:underline">info@londonlanguageacademy.com</a></p>
           </section>
 
         </div>

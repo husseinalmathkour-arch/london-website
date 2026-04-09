@@ -10,14 +10,7 @@ export const metadata: Metadata = {
   description: 'London Language Academy offers expert courses in 15+ languages in Central London — English, French, Spanish, German, Italian, Mandarin, Arabic, Portuguese and more. All levels welcome.',
 }
 
-const levelMeta = [
-  { code: 'A1', label: 'Beginner' },
-  { code: 'A2', label: 'Elementary' },
-  { code: 'B1', label: 'Intermediate' },
-  { code: 'B2', label: 'Upper-Intermediate' },
-  { code: 'C1', label: 'Advanced' },
-  { code: 'C2', label: 'Proficiency' },
-]
+const levelCodes = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const
 
 export default async function LanguagesPage() {
   const t = await getTranslations('languages')
@@ -42,7 +35,30 @@ export default async function LanguagesPage() {
     image: l.image_url ?? null,
   }))
   const levelDescs = tRaw.raw('languages.cefrDescriptions') as string[]
-  const levelDescriptions = levelMeta.map((l, i) => ({ ...l, desc: levelDescs[i] }))
+  const levelLabels = locale === 'tr'
+    ? ['Başlangıç', 'Temel', 'Orta', 'Orta-Üstü', 'İleri', 'Yetkin']
+    : ['Beginner', 'Elementary', 'Intermediate', 'Upper-Intermediate', 'Advanced', 'Proficiency']
+  const levelDescriptions = levelCodes.map((code, i) => ({ code, label: levelLabels[i], desc: levelDescs[i] }))
+  const tableHeaders = locale === 'tr'
+    ? ['Dil', 'Seviyeler', 'Genel', 'Sınav Hazırlığı', 'İş Dili', 'Online', 'Yurt Dışı Eğitim']
+    : ['Language', 'Levels', 'General', 'Exam Prep', 'Business', 'Online', 'Study Abroad']
+  const tableRows = locale === 'tr'
+    ? [
+        { lang: '🇬🇧 İngilizce', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇫🇷 Fransızca', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇪🇸 İspanyolca', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇩🇪 Almanca', levels: 'A1–C1', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇮🇹 İtalyanca', levels: 'A1–B2', general: true, exam: false, business: false, online: true, abroad: true },
+        { lang: '🇸🇦 Arapça', levels: 'A1–B1', general: true, exam: false, business: false, online: true, abroad: false },
+      ]
+    : [
+        { lang: '🇬🇧 English', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇫🇷 French', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇪🇸 Spanish', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇩🇪 German', levels: 'A1–C1', general: true, exam: true, business: true, online: true, abroad: true },
+        { lang: '🇮🇹 Italian', levels: 'A1–B2', general: true, exam: false, business: false, online: true, abroad: true },
+        { lang: '🇸🇦 Arabic', levels: 'A1–B1', general: true, exam: false, business: false, online: true, abroad: false },
+      ]
 
   return (
     <div className="pt-20">
@@ -162,24 +178,17 @@ export default async function LanguagesPage() {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="bg-blue-600 text-white text-left">
-                    <th className="p-4 rounded-tl-xl">Language</th>
-                    <th className="p-4">Levels</th>
-                    <th className="p-4">General</th>
-                    <th className="p-4">Exam Prep</th>
-                    <th className="p-4">Business</th>
-                    <th className="p-4">Online</th>
-                    <th className="p-4 rounded-tr-xl">Study Abroad</th>
+                    <th className="p-4 rounded-tl-xl">{tableHeaders[0]}</th>
+                    <th className="p-4">{tableHeaders[1]}</th>
+                    <th className="p-4">{tableHeaders[2]}</th>
+                    <th className="p-4">{tableHeaders[3]}</th>
+                    <th className="p-4">{tableHeaders[4]}</th>
+                    <th className="p-4">{tableHeaders[5]}</th>
+                    <th className="p-4 rounded-tr-xl">{tableHeaders[6]}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    { lang: '🇬🇧 English', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
-                    { lang: '🇫🇷 French', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
-                    { lang: '🇪🇸 Spanish', levels: 'A1–C2', general: true, exam: true, business: true, online: true, abroad: true },
-                    { lang: '🇩🇪 German', levels: 'A1–C1', general: true, exam: true, business: true, online: true, abroad: true },
-                    { lang: '🇮🇹 Italian', levels: 'A1–B2', general: true, exam: false, business: false, online: true, abroad: true },
-                    { lang: '🇸🇦 Arabic', levels: 'A1–B1', general: true, exam: false, business: false, online: true, abroad: false },
-                  ].map((row, i) => (
+                  {tableRows.map((row, i) => (
                     <tr key={row.lang} className={i % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800/50'}>
                       <td className="p-4 font-semibold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-700">{row.lang}</td>
                       <td className="p-4 text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-700">{row.levels}</td>
