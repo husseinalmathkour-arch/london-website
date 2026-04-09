@@ -4,7 +4,7 @@ import { motion, useAnimationFrame } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, PlayCircle, Star } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Typewriter from './Typewriter'
 import { BeamsCanvas } from './ui/beams-background'
 import RotatingEarth from './ui/wireframe-dotted-globe'
@@ -91,6 +91,7 @@ function HeroLanguageCard({
 export default function HeroSection() {
   const t = useTranslations('hero')
   const locale = useLocale()
+  const [mounted, setMounted] = useState(false)
   const [orbitTime, setOrbitTime] = useState(0)
   const orbitCards = [
     { angle: -Math.PI / 2, radiusX: 270, radiusY: 8, driftX: -12, driftY: -10, speed: 0.2 },
@@ -101,14 +102,19 @@ export default function HeroSection() {
     { angle: (7 * Math.PI) / 6, radiusX: 272, radiusY: 12, driftX: -14, driftY: 4, speed: 0.2 },
   ] as const
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   useAnimationFrame((time) => {
+    if (!mounted) return
     setOrbitTime(time / 1000)
   })
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#70212c' }}>
       {/* Animated beams background */}
-      <BeamsCanvas intensity="medium" />
+      {mounted && <BeamsCanvas intensity="medium" />}
 
       {/* Subtle overlay blobs */}
       <div className="absolute top-20 right-0 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(195,171,115,0.08)' }} />
@@ -225,17 +231,21 @@ export default function HeroSection() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative flex h-[580px] w-[580px] items-center justify-center bg-[radial-gradient(circle_at_center,rgba(195,171,115,0.18),rgba(195,171,115,0.02)_45%,transparent_68%)]">
                 <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(195,171,115,0.12),transparent_60%)] blur-3xl" />
-                <RotatingEarth
-                  width={580}
-                  height={580}
-                  className="relative z-[1] h-[580px] w-[580px]"
-                  strokeColor="#c3ab73"
-                  dotColor="rgba(195,171,115,0.76)"
-                />
+                {mounted ? (
+                  <RotatingEarth
+                    width={580}
+                    height={580}
+                    className="relative z-[1] h-[580px] w-[580px]"
+                    strokeColor="#c3ab73"
+                    dotColor="rgba(195,171,115,0.76)"
+                  />
+                ) : (
+                  <div className="relative z-[1] h-[580px] w-[580px] rounded-full border border-[#c3ab73]/30 bg-[radial-gradient(circle_at_center,rgba(195,171,115,0.14),rgba(195,171,115,0.02)_52%,transparent_70%)]" />
+                )}
               </div>
             </div>
 
-            {heroLanguages.map((item, i) => (
+            {mounted && heroLanguages.map((item, i) => (
               <HeroLanguageCard
                 key={item.lang}
                 country={item.country}
