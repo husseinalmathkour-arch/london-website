@@ -5,10 +5,28 @@ import { GlowCard } from '@/components/ui/spotlight-card'
 import { CheckCircle, Award, BookOpen, Globe, Heart, Target, Users, Lightbulb, GraduationCap } from 'lucide-react'
 import { getTranslations, getLocale } from 'next-intl/server'
 import { createServiceClient } from '@/lib/supabase'
+import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
 
-export const metadata: Metadata = {
-  title: 'About Us | London Language School Since 2015',
-  description: 'Learn about London Language Academy — a leading language school in Central London offering English, IELTS, Cambridge, and 15+ languages. Our mission, values, and expert teaching team.',
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const isTR = locale === 'tr'
+  const path = '/about'
+
+  return {
+    title: isTR
+      ? 'Hakkımızda | Londra’da Uzman Dil Okulu'
+      : 'About Us | London Language School Since 2015',
+    description: isTR
+      ? 'London Language Academy hakkında bilgi alın. Central London’da İngilizce, IELTS, Cambridge ve 15+ dil eğitimi sunan uzman dil okulunun vizyonunu, değerlerini ve akademik ekibini keşfedin.'
+      : 'Learn about London Language Academy — a leading language school in Central London offering English, IELTS, Cambridge, and 15+ languages. Our mission, values, and expert teaching team.',
+    alternates: {
+      canonical: withSiteUrl(`/${locale}${path}`),
+      languages: getLocaleAlternates(path),
+    },
+  }
 }
 
 export default async function AboutPage() {

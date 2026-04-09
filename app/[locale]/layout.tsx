@@ -19,59 +19,92 @@ import PageTransition from '@/components/PageTransition'
 import { createServiceClient } from '@/lib/supabase'
 import { getLocaleAlternates, getMetadataBase, withSiteUrl } from '@/lib/site-url'
 
-export const metadata: Metadata = {
-  title: {
-    default: 'London Language Academy — Expert Language Courses in Central London',
-    template: '%s | London Language Academy',
-  },
-  description:
-    'London Language Academy offers world-class language courses in Central London. English, French, Spanish, German, Italian and more. IELTS, Cambridge, and Business Language specialists.',
-  keywords: [
-    'London language school',
-    'English courses London',
-    'IELTS preparation London',
-    'Cambridge exam preparation',
-    'Business English London',
-    'French courses London',
-    'Spanish courses London',
-    'language academy Covent Garden',
-    'study abroad London',
-    'language school Bursa',
-    'language school Istanbul',
-  ],
-  authors: [{ name: 'London Language Academy' }],
-  creator: 'London Language Academy',
-  openGraph: {
-    type: 'website',
-    locale: 'en_GB',
-    alternateLocale: ['tr_TR'],
-    url: withSiteUrl('/'),
-    siteName: 'London Language Academy',
-    title: 'London Language Academy — Expert Language Courses',
-    description: 'World-class language courses in Central London. Expert teachers, proven results.',
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'London Language Academy',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'London Language Academy',
-    description: 'Expert language courses in Central London.',
-    images: ['/opengraph-image'],
-  },
-  metadataBase: getMetadataBase(),
-  alternates: {
-    canonical: withSiteUrl('/'),
-    languages: getLocaleAlternates(''),
-  },
-  verification: process.env.GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
-    : undefined,
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const isTR = locale === 'tr'
+
+  return {
+    title: {
+      default: isTR
+        ? 'London Language Academy | Central London’da Uzman Dil Kursları'
+        : 'London Language Academy — Expert Language Courses in Central London',
+      template: '%s | London Language Academy',
+    },
+    description: isTR
+      ? 'London Language Academy, Central London’da uzman dil kursları sunar. İngilizce, IELTS, Cambridge, Business English ve daha fazlası için profesyonel eğitim alın.'
+      : 'London Language Academy offers world-class language courses in Central London. English, French, Spanish, German, Italian and more. IELTS, Cambridge, and Business Language specialists.',
+    keywords: isTR
+      ? [
+          'Londra dil okulu',
+          'Londra İngilizce kursu',
+          'IELTS hazırlık Londra',
+          'Cambridge sınav hazırlık',
+          'Business English Londra',
+          'Londra Fransızca kursu',
+          'Londra İspanyolca kursu',
+          'Covent Garden dil okulu',
+          'İngiltere yurt dışı eğitim',
+          'Bursa dil okulu',
+          'İstanbul dil okulu',
+        ]
+      : [
+          'London language school',
+          'English courses London',
+          'IELTS preparation London',
+          'Cambridge exam preparation',
+          'Business English London',
+          'French courses London',
+          'Spanish courses London',
+          'language academy Covent Garden',
+          'study abroad London',
+          'language school Bursa',
+          'language school Istanbul',
+        ],
+    authors: [{ name: 'London Language Academy' }],
+    creator: 'London Language Academy',
+    openGraph: {
+      type: 'website',
+      locale: isTR ? 'tr_TR' : 'en_GB',
+      alternateLocale: isTR ? ['en_GB'] : ['tr_TR'],
+      url: withSiteUrl(`/${locale}`),
+      siteName: 'London Language Academy',
+      title: isTR
+        ? 'London Language Academy | Central London’da Uzman Dil Kursları'
+        : 'London Language Academy — Expert Language Courses',
+      description: isTR
+        ? 'Central London’da İngilizce, IELTS, Cambridge ve daha fazlası için uzman eğitmenlerle dil kursları.'
+        : 'World-class language courses in Central London. Expert teachers, proven results.',
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: 'London Language Academy',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isTR
+        ? 'London Language Academy | Londra Dil Kursları'
+        : 'London Language Academy',
+      description: isTR
+        ? 'Central London’da uzman dil kursları.'
+        : 'Expert language courses in Central London.',
+      images: ['/opengraph-image'],
+    },
+    metadataBase: getMetadataBase(),
+    alternates: {
+      canonical: withSiteUrl(`/${locale}`),
+      languages: getLocaleAlternates(''),
+    },
+    verification: process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : undefined,
+  }
 }
 
 export function generateStaticParams() {

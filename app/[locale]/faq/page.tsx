@@ -7,10 +7,28 @@ import Link from 'next/link'
 import { MessageCircle } from 'lucide-react'
 import { getTranslations, getLocale } from 'next-intl/server'
 import { createServiceClient } from '@/lib/supabase'
+import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
 
-export const metadata: Metadata = {
-  title: 'FAQ | Language Course Questions Answered',
-  description: 'Frequently asked questions about London Language Academy — course levels, admissions, fees, visas, IELTS preparation, study abroad, and more. Get the answers you need.',
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const isTR = locale === 'tr'
+  const path = '/faq'
+
+  return {
+    title: isTR
+      ? 'Sık Sorulan Sorular | Dil Kursları Hakkında Merak Edilenler'
+      : 'FAQ | Language Course Questions Answered',
+    description: isTR
+      ? 'London Language Academy hakkında sık sorulan soruları inceleyin. Kurs seviyeleri, kayıt, ücretler, vize, IELTS hazırlık ve yurt dışı eğitim seçenekleri hakkında net cevaplar alın.'
+      : 'Frequently asked questions about London Language Academy — course levels, admissions, fees, visas, IELTS preparation, study abroad, and more. Get the answers you need.',
+    alternates: {
+      canonical: withSiteUrl(`/${locale}${path}`),
+      languages: getLocaleAlternates(path),
+    },
+  }
 }
 
 const categoryKeys = ['General', 'Courses', 'Teachers', 'Study Abroad']

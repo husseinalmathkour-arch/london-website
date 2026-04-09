@@ -7,10 +7,28 @@ import { services } from '@/lib/data'
 import { createServiceClient } from '@/lib/supabase'
 import { Clock, Users, Award, CheckCircle, BookOpen, ArrowRight } from 'lucide-react'
 import { getTranslations, getLocale } from 'next-intl/server'
+import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
 
-export const metadata: Metadata = {
-  title: 'Language Courses in London | IELTS, English & More',
-  description: 'Explore all language courses at London Language Academy — General English, IELTS & Cambridge Exam Prep, Business English, One-to-One Tuition, Online Courses, and Intensive Programmes in Central London.',
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const isTR = locale === 'tr'
+  const path = '/services'
+
+  return {
+    title: isTR
+      ? 'Londra Dil Kursları | IELTS, İngilizce ve Daha Fazlası'
+      : 'Language Courses in London | IELTS, English & More',
+    description: isTR
+      ? 'London Language Academy’deki tüm dil kurslarını keşfedin. General English, IELTS ve Cambridge hazırlık, Business English, birebir dersler, online kurslar ve yoğun programlar Central London’da.'
+      : 'Explore all language courses at London Language Academy — General English, IELTS & Cambridge Exam Prep, Business English, One-to-One Tuition, Online Courses, and Intensive Programmes in Central London.',
+    alternates: {
+      canonical: withSiteUrl(`/${locale}${path}`),
+      languages: getLocaleAlternates(path),
+    },
+  }
 }
 
 export default async function ServicesPage() {
