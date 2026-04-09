@@ -27,16 +27,29 @@ export default function TopBar() {
           <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
         </button>
 
-        {/* Phone — mobile only */}
-        {branch.phone && (
-          <a
-            href={`tel:${branch.phone}`}
-            className="sm:hidden flex items-center gap-1.5 text-white/80 hover:text-white transition-colors ml-auto"
-          >
-            <Phone className="w-3.5 h-3.5" style={{ color: '#c3ab73' }} />
-            <span className="font-semibold">{branch.phone}</span>
-          </a>
-        )}
+        {/* Mobile actions */}
+        <div className="sm:hidden ml-auto flex items-center gap-3 text-white/80">
+          {branch.maps && (
+            <a
+              href={branch.maps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              aria-label={t('getDirections')}
+            >
+              <ExternalLink className="w-3.5 h-3.5" style={{ color: '#c3ab73' }} />
+            </a>
+          )}
+          {branch.phone && (
+            <a
+              href={`tel:${branch.phone}`}
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5" style={{ color: '#c3ab73' }} />
+              <span className="font-semibold">{branch.phone}</span>
+            </a>
+          )}
+        </div>
 
         {/* Branch details */}
         <div className="hidden sm:flex items-center gap-5 text-white/70">

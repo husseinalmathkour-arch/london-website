@@ -11,17 +11,10 @@ import { useLocale, useTranslations } from 'next-intl'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
   const t = useTranslations('nav')
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     setIsOpen(false)
@@ -63,13 +56,13 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center group flex-shrink-0 -ml-16">
+          <Link href={`/${locale}`} className="relative z-10 flex items-center group flex-shrink-0 lg:-ml-16">
             <Image
               src="/logo.png"
               alt="London Language Academy"
               width={260}
               height={80}
-              className="h-40 w-auto object-contain"
+              className="h-12 sm:h-14 lg:h-40 w-auto object-contain"
               priority
             />
           </Link>
@@ -95,7 +88,7 @@ export default function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="relative z-20 flex items-center gap-2 flex-shrink-0">
             {/* Language toggle */}
             <button
               onClick={toggleLocale}
