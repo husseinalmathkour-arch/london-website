@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import './globals.css'
 import { getMetadataBase } from '@/lib/site-url'
 
@@ -10,8 +11,11 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const localeCookie = cookies().get('NEXT_LOCALE')?.value
+  const lang = localeCookie === 'tr' ? 'tr' : 'en'
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   )

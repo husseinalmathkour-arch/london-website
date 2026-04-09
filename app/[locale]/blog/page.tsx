@@ -3,10 +3,28 @@ import AnimatedSection from '@/components/AnimatedSection'
 import BlogFilteredList from '@/components/BlogFilteredList'
 import { createServiceClient } from '@/lib/supabase'
 import { getTranslations, getLocale } from 'next-intl/server'
+import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
 
-export const metadata: Metadata = {
-  title: 'Blog | Language Learning Tips, IELTS Guides & More',
-  description: 'Language learning tips, IELTS and Cambridge exam guides, study abroad advice, student life in London, and the latest news from London Language Academy.',
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const isTR = locale === 'tr'
+  const path = '/blog'
+
+  return {
+    title: isTR
+      ? 'Blog | Dil Öğrenme İpuçları, IELTS Rehberleri ve Daha Fazlası'
+      : 'Blog | Language Learning Tips, IELTS Guides & More',
+    description: isTR
+      ? 'Dil öğrenme ipuçları, IELTS ve Cambridge sınav rehberleri, yurt dışı eğitim önerileri, Londra öğrenci yaşamı ve London Language Academy’den en güncel içerikler.'
+      : 'Language learning tips, IELTS and Cambridge exam guides, study abroad advice, student life in London, and the latest news from London Language Academy.',
+    alternates: {
+      canonical: withSiteUrl(`/${locale}${path}`),
+      languages: getLocaleAlternates(path),
+    },
+  }
 }
 
 export default async function BlogPage() {
