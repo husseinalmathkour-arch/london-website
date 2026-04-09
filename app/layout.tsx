@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { cookies } from 'next/headers'
+import { getLocale } from 'next-intl/server'
 import './globals.css'
 import { getMetadataBase } from '@/lib/site-url'
 
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     : undefined,
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const localeCookie = cookies().get('NEXT_LOCALE')?.value
-  const lang = localeCookie === 'tr' ? 'tr' : 'en'
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale()
+  const lang = locale === 'tr' ? 'tr' : 'en'
 
   return (
     <html lang={lang} suppressHydrationWarning>

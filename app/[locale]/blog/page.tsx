@@ -3,7 +3,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import BlogFilteredList from '@/components/BlogFilteredList'
 import { createServiceClient } from '@/lib/supabase'
 import { getTranslations, getLocale } from 'next-intl/server'
-import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
+import { buildPageMetadata } from '@/lib/metadata'
 
 export async function generateMetadata({
   params: { locale },
@@ -13,23 +13,28 @@ export async function generateMetadata({
   const isTR = locale === 'tr'
   const path = '/blog'
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path,
     title: isTR
       ? 'Blog | Dil Öğrenme İpuçları, IELTS Rehberleri ve Daha Fazlası'
       : 'Blog | Language Learning Tips, IELTS Guides & More',
     description: isTR
       ? 'Dil öğrenme ipuçları, IELTS ve Cambridge sınav rehberleri, yurt dışı eğitim önerileri, Londra öğrenci yaşamı ve London Language Academy’den en güncel içerikler.'
       : 'Language learning tips, IELTS and Cambridge exam guides, study abroad advice, student life in London, and the latest news from London Language Academy.',
-    alternates: {
-      canonical: withSiteUrl(`/${locale}${path}`),
-      languages: getLocaleAlternates(path),
-    },
-  }
+  })
 }
 
 export default async function BlogPage() {
   const t = await getTranslations('blog')
   const locale = await getLocale()
+  const categoryLabels: Record<string, string> = {
+    'Exam Tips': t('categories.examTips'),
+    'Career': t('categories.career'),
+    'Learning Science': t('categories.learningScience'),
+    'Student Life': t('categories.studentLife'),
+    'Study Abroad': t('categories.studyAbroad'),
+  }
 
   const db = createServiceClient()
   const { data: rows } = await db
@@ -48,7 +53,8 @@ export default async function BlogPage() {
     authorRole: '',
     date: p.created_at,
     readTime: '',
-    category: p.category ?? '',
+    categoryValue: p.category ?? '',
+    category: categoryLabels[p.category ?? ''] ?? (p.category ?? ''),
     image: p.image_url ?? 'https://rjnbglsmjcuvlbxozbdq.supabase.co/storage/v1/object/public/images/blog/science-learning.jpg',
     tags: [] as string[],
   }))

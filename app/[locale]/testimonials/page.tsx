@@ -6,7 +6,7 @@ import { createServiceClient } from '@/lib/supabase'
 import { getLocale } from 'next-intl/server'
 import { Star, Quote } from 'lucide-react'
 import Image from 'next/image'
-import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
+import { buildPageMetadata } from '@/lib/metadata'
 
 export async function generateMetadata({
   params: { locale },
@@ -16,18 +16,16 @@ export async function generateMetadata({
   const isTR = locale === 'tr'
   const path = '/testimonials'
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path,
     title: isTR
       ? 'Öğrenci Yorumları | London Language Academy Deneyimleri'
       : 'Student Reviews & Testimonials | London Language Academy',
     description: isTR
       ? 'London Language Academy öğrencilerinin gerçek yorumlarını okuyun. İngilizce, IELTS ve diğer dil kurslarında eğitim alan öğrencilerin deneyimlerini inceleyin.'
       : 'Read what our students say about London Language Academy — real reviews from English, IELTS, and language course students from around the world.',
-    alternates: {
-      canonical: withSiteUrl(`/${locale}${path}`),
-      languages: getLocaleAlternates(path),
-    },
-  }
+  })
 }
 
 export default async function TestimonialsPage() {

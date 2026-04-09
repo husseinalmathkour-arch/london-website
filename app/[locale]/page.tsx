@@ -15,31 +15,27 @@ import {
   Trophy, HeartHandshake, GraduationCap, Smile, Music4,
   Gamepad2, MessageSquareText,
 } from 'lucide-react'
-import { createServiceClient } from '@/lib/supabase'
 import { getTranslations, getLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
-import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
+import { buildPageMetadata } from '@/lib/metadata'
+import { getHomePageData } from '@/lib/public-data'
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale()
   if (locale === 'tr') {
-    return {
+    return buildPageMetadata({
+      locale,
+      path: '',
       title: 'London Language Academy — Londra\'da Dil Kursları',
       description: 'Londra\'nın kalbinde dünya standartlarında dil kursları. İngilizce, Fransızca, İspanyolca, Almanca ve daha fazlası. IELTS, Cambridge ve İş İngilizcesi uzmanları.',
-      alternates: {
-        canonical: withSiteUrl('/tr'),
-        languages: getLocaleAlternates(''),
-      },
-    }
+    })
   }
-  return {
+  return buildPageMetadata({
+    locale,
+    path: '',
     title: 'London Language Academy — Expert Language Courses in Central London',
     description: 'London Language Academy offers world-class language courses in Central London. English, French, Spanish, German, Italian and more. IELTS, Cambridge, and Business Language specialists.',
-    alternates: {
-      canonical: withSiteUrl('/en'),
-      languages: getLocaleAlternates(''),
-    },
-  }
+  })
 }
 
 export default async function HomePage() {
@@ -48,32 +44,7 @@ export default async function HomePage() {
   const tk = await getTranslations('kids')
   const tRaw = await getTranslations()
   const locale = await getLocale()
-  const db = createServiceClient()
-  const [
-    { data: testimonialsRows },
-    { data: courseRows },
-    { data: langRows },
-  ] = await Promise.all([
-    db
-      .from('testimonials')
-      .select('id,name,role_en,role_tr,content_en,content_tr,avatar_url,rating')
-      .eq('published', true)
-      .eq('featured', true)
-      .order('sort_order')
-      .limit(6),
-    db
-      .from('courses')
-      .select('id,title_en,title_tr,description_en,description_tr,features_en,features_tr,price,popular')
-      .eq('published', true)
-      .order('sort_order')
-      .limit(6),
-    db
-      .from('languages_offered')
-      .select('id,name_en,name_tr,flag,level_en,level_tr,description_en,description_tr,students,color,image_url')
-      .eq('published', true)
-      .order('sort_order')
-      .limit(8),
-  ])
+  const { testimonialsRows, courseRows, langRows } = await getHomePageData()
 
   const testimonials: TestimonialItem[] = (testimonialsRows ?? []).map(r => ({
     name: r.name,

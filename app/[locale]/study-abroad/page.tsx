@@ -7,7 +7,7 @@ import { Plane, CheckCircle, Globe, Users, BookOpen, Star, Briefcase, Graduation
 import Link from 'next/link'
 import { getTranslations, getLocale } from 'next-intl/server'
 import { createServiceClient } from '@/lib/supabase'
-import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
+import { buildPageMetadata } from '@/lib/metadata'
 
 export async function generateMetadata({
   params: { locale },
@@ -17,18 +17,16 @@ export async function generateMetadata({
   const isTR = locale === 'tr'
   const path = '/study-abroad'
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path,
     title: isTR
       ? 'Yurt Dışı Eğitim Programları | 12+ Ülkede Dil Eğitimi'
       : 'Study Abroad Programmes | Language Immersion in 12 Countries',
     description: isTR
       ? 'London Language Academy ile yurt dışında eğitim fırsatlarını keşfedin. İspanya, Fransa, Almanya, ABD ve daha birçok ülkede dil eğitimi, yaz okulu, akademik yerleştirme ve staj programları.'
       : 'Study abroad with London Language Academy — language immersion courses, summer schools, academic placements and internships in Spain, France, Germany, USA and 12+ countries.',
-    alternates: {
-      canonical: withSiteUrl(`/${locale}${path}`),
-      languages: getLocaleAlternates(path),
-    },
-  }
+  })
 }
 
 

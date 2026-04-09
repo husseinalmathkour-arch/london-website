@@ -16,8 +16,8 @@ import { OrganizationSchema, LocalBusinessSchema } from '@/components/JsonLd'
 import CookieBanner from '@/components/CookieBanner'
 import BackToTop from '@/components/BackToTop'
 import PageTransition from '@/components/PageTransition'
-import { createServiceClient } from '@/lib/supabase'
 import { getLocaleAlternates, getMetadataBase, withSiteUrl } from '@/lib/site-url'
+import { getSharedSiteData } from '@/lib/public-data'
 
 export async function generateMetadata({
   params: { locale },
@@ -119,11 +119,7 @@ export default async function LocaleLayout({
   params: { locale: string }
 }) {
   const messages = await getMessages()
-  const db = createServiceClient()
-  const [{ data: settingsRows }, { data: branchRows }] = await Promise.all([
-    db.from('site_settings').select('key,value'),
-    db.from('branches').select('id,name_en,name_tr,address_en,address_tr,phone,whatsapp,hours,maps_url').eq('published', true).order('sort_order'),
-  ])
+  const { settingsRows, branchRows } = await getSharedSiteData()
   const s: Record<string, string> = {}
   ;(settingsRows ?? []).forEach((r: { key: string; value: string | null }) => { s[r.key] = r.value ?? '' })
 

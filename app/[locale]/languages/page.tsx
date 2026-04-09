@@ -4,7 +4,7 @@ import LanguageCard from '@/components/LanguageCard'
 import CTABanner from '@/components/CTABanner'
 import { createServiceClient } from '@/lib/supabase'
 import { getTranslations, getLocale } from 'next-intl/server'
-import { getLocaleAlternates, withSiteUrl } from '@/lib/site-url'
+import { buildPageMetadata } from '@/lib/metadata'
 
 export async function generateMetadata({
   params: { locale },
@@ -14,18 +14,16 @@ export async function generateMetadata({
   const isTR = locale === 'tr'
   const path = '/languages'
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path,
     title: isTR
       ? 'Öğrettiğimiz Diller | Londra’da Fransızca, İspanyolca, Almanca ve Daha Fazlası'
       : 'Languages We Teach | French, Spanish, German & More in London',
     description: isTR
       ? 'London Language Academy, Central London’da 15’ten fazla dilde uzman kurslar sunar. İngilizce, Fransızca, İspanyolca, Almanca, İtalyanca, Arapça ve daha fazlası. Tüm seviyelere uygun programlar.'
       : 'London Language Academy offers expert courses in 15+ languages in Central London — English, French, Spanish, German, Italian, Mandarin, Arabic, Portuguese and more. All levels welcome.',
-    alternates: {
-      canonical: withSiteUrl(`/${locale}${path}`),
-      languages: getLocaleAlternates(path),
-    },
-  }
+  })
 }
 
 const levelCodes = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const

@@ -1,8 +1,8 @@
-import { withSiteUrl } from '@/lib/site-url'
+import { getSiteUrl, withSiteUrl } from '@/lib/site-url'
 
 // JSON-LD structured data schemas for Google rich results
 
-const BASE_URL = withSiteUrl('/')
+const BASE_URL = getSiteUrl()
 
 export function OrganizationSchema() {
   const schema = {

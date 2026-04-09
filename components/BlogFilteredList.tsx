@@ -15,6 +15,7 @@ interface Post {
   authorRole: string
   date: string
   readTime: string
+  categoryValue: string
   category: string
   image: string
   tags: string[]
@@ -37,7 +38,7 @@ export default function BlogFilteredList({ posts, categories, featuredLabel, rea
   const locale = useLocale()
   const [active, setActive] = useState('all')
 
-  const filtered = active === 'all' ? posts : posts.filter(p => p.category === active)
+  const filtered = active === 'all' ? posts : posts.filter(p => p.categoryValue === active)
   const featured = filtered[0] ?? null
   const rest = filtered.slice(1)
 
