@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { revalidateAll } from '@/lib/revalidate'
 import { Save, Trash2, Check } from 'lucide-react'
+import { useAdminLang } from '@/context/AdminLangContext'
 
 type LocaleKey = 'en' | 'tr'
 
@@ -40,6 +41,7 @@ const settingKey: Record<LocaleKey, string> = {
 }
 
 export default function AdminServicesPage() {
+  const { lang } = useAdminLang()
   const [tab, setTab] = useState<LocaleKey>('en')
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
@@ -107,6 +109,25 @@ export default function AdminServicesPage() {
 
   const inp = 'w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500'
   const lbl = 'block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5'
+  const isTR = lang === 'tr'
+  const copy = {
+    title: isTR ? 'Hizmetler — Genel İngilizce Seviyeleri' : 'Services — General English Levels',
+    description: isTR ? 'Hizmetler sayfasında görünen 6 seviye kartını düzenleyin' : 'Edit the 6 level cards shown on the Services page',
+    reset: deleting ? (isTR ? 'Sıfırlanıyor...' : 'Resetting...') : (isTR ? `${tab.toUpperCase()} Sıfırla` : `Reset ${tab.toUpperCase()}`),
+    save: saved
+      ? (isTR ? 'Kaydedildi!' : 'Saved!')
+      : saving
+        ? (isTR ? 'Kaydediliyor...' : 'Saving...')
+        : (isTR ? `${tab.toUpperCase()} Kaydet` : `Save ${tab.toUpperCase()}`),
+    en: isTR ? 'İngilizce' : 'English',
+    tr: isTR ? 'Türkçe' : 'Turkish',
+    level: isTR ? 'Seviye' : 'Level',
+    name: isTR ? 'Ad' : 'Name',
+    group: isTR ? 'Seviye / Grup' : 'Level / Group',
+    hours: isTR ? 'Ders Saati' : 'Study Hours',
+    duration: isTR ? 'Süre' : 'Duration',
+    descriptionLabel: isTR ? 'Açıklama' : 'Description',
+  }
 
   if (loading) {
     return (
@@ -120,8 +141,8 @@ export default function AdminServicesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Services — General English Levels</h1>
-          <p className="text-gray-400 text-sm mt-1">Edit the 6 level cards shown on the Services page</p>
+          <h1 className="text-2xl font-bold text-white">{copy.title}</h1>
+          <p className="text-gray-400 text-sm mt-1">{copy.description}</p>
         </div>
         <div className="flex items-center gap-2">
           <button
@@ -130,14 +151,14 @@ export default function AdminServicesPage() {
             className="flex items-center gap-2 px-4 py-2 rounded-xl border border-red-800 text-red-300 hover:bg-red-950/40 text-sm font-semibold disabled:opacity-50"
           >
             <Trash2 className="w-4 h-4" />
-            {deleting ? 'Resetting...' : `Reset ${tab.toUpperCase()}`}
+            {copy.reset}
           </button>
           <button
             onClick={save}
             disabled={saving}
             className={`flex items-center gap-2 text-white text-sm font-semibold px-5 py-2 rounded-xl transition-colors ${saved ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'} disabled:opacity-50`}
           >
-            {saved ? <><Check className="w-4 h-4" /> Saved!</> : <><Save className="w-4 h-4" /> {saving ? 'Saving...' : `Save ${tab.toUpperCase()}`}</>}
+            {saved ? <><Check className="w-4 h-4" /> {copy.save}</> : <><Save className="w-4 h-4" /> {copy.save}</>}
           </button>
         </div>
       </div>
@@ -149,7 +170,7 @@ export default function AdminServicesPage() {
             onClick={() => setTab(locale)}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${tab === locale ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}
           >
-            {locale === 'en' ? 'English' : 'Turkish'}
+            {locale === 'en' ? copy.en : copy.tr}
           </button>
         ))}
       </div>
@@ -158,27 +179,27 @@ export default function AdminServicesPage() {
         {levels[tab].map((level, i) => (
           <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
             <div className="mb-4">
-              <h2 className="text-white font-semibold">Level {i + 1} — {level.name}</h2>
+              <h2 className="text-white font-semibold">{copy.level} {i + 1} — {level.name}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className={lbl}>Name</label>
+                <label className={lbl}>{copy.name}</label>
                 <input className={inp} value={level.name} onChange={e => updateLevel(i, 'name', e.target.value)} />
               </div>
               <div>
-                <label className={lbl}>Level / Group</label>
+                <label className={lbl}>{copy.group}</label>
                 <input className={inp} value={level.group} onChange={e => updateLevel(i, 'group', e.target.value)} />
               </div>
               <div>
-                <label className={lbl}>Study Hours</label>
+                <label className={lbl}>{copy.hours}</label>
                 <input className={inp} value={level.hours} onChange={e => updateLevel(i, 'hours', e.target.value)} />
               </div>
               <div>
-                <label className={lbl}>Duration</label>
+                <label className={lbl}>{copy.duration}</label>
                 <input className={inp} value={level.duration} onChange={e => updateLevel(i, 'duration', e.target.value)} />
               </div>
               <div className="md:col-span-2">
-                <label className={lbl}>Description</label>
+                <label className={lbl}>{copy.descriptionLabel}</label>
                 <textarea className={inp} rows={4} value={level.description} onChange={e => updateLevel(i, 'description', e.target.value)} />
               </div>
             </div>

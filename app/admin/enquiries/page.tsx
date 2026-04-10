@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Search, ChevronDown, X, Trash2 } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import { useAdminLang } from '@/context/AdminLangContext'
 
 interface Enquiry {
   id: string
@@ -23,6 +24,7 @@ const statusStyles: Record<string, string> = {
 }
 
 export default function EnquiriesPage() {
+  const { t, lang } = useAdminLang()
   const [enquiries, setEnquiries] = useState<Enquiry[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -74,11 +76,26 @@ export default function EnquiriesPage() {
     return matchSearch && matchStatus
   })
 
+  const isTR = lang === 'tr'
+  const copy = {
+    title: t('enquiriesTitle'),
+    summary: isTR ? `${enquiries.filter(e => e.status === 'new').length} yeni, ${enquiries.length} toplam` : `${enquiries.filter(e => e.status === 'new').length} new, ${enquiries.length} total`,
+    search: t('search'),
+    loading: t('loading'),
+    empty: isTR ? 'İletişim talebi bulunamadı.' : 'No enquiries found.',
+    service: isTR ? 'Hizmet' : 'Service',
+    delete: t('delete'),
+    cancel: t('cancel'),
+    deleteThis: isTR ? 'Bu talep silinsin mi?' : 'Delete this enquiry?',
+    deleteConfirm: isTR ? 'Evet, sil' : 'Yes, delete',
+    deleteAction: isTR ? 'Talebi sil' : 'Delete enquiry',
+  }
+
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">Contact Enquiries</h1>
-        <p className="text-gray-400 text-sm mt-1">{enquiries.filter(e => e.status === 'new').length} new, {enquiries.length} total</p>
+        <h1 className="text-2xl font-bold text-white">{copy.title}</h1>
+        <p className="text-gray-400 text-sm mt-1">{copy.summary}</p>
       </div>
 
       <div className="flex gap-3 mb-4 flex-wrap">
@@ -87,7 +104,7 @@ export default function EnquiriesPage() {
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
-            placeholder="Search..."
+            placeholder={copy.search}
             className="w-full bg-gray-900 border border-gray-800 text-white text-sm rounded-xl pl-9 pr-4 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -96,18 +113,18 @@ export default function EnquiriesPage() {
           onChange={e => setFilterStatus(e.target.value)}
           className="bg-gray-900 border border-gray-800 text-white text-sm rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
         >
-          <option value="all">All Status</option>
-          <option value="new">New</option>
-          <option value="read">Read</option>
-          <option value="replied">Replied</option>
+          <option value="all">{t('allStatus')}</option>
+          <option value="new">{t('statusNew')}</option>
+          <option value="read">{t('statusRead')}</option>
+          <option value="replied">{t('statusReplied')}</option>
         </select>
       </div>
 
       <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
         {loading ? (
-          <div className="p-8 text-center text-gray-500">Loading...</div>
+          <div className="p-8 text-center text-gray-500">{copy.loading}</div>
         ) : filtered.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">No enquiries found.</div>
+          <div className="p-8 text-center text-gray-500">{copy.empty}</div>
         ) : (
           <div className="divide-y divide-gray-800">
             {filtered.map(e => (
@@ -129,8 +146,8 @@ export default function EnquiriesPage() {
                   <span className="text-xs text-gray-600">{new Date(e.created_at).toLocaleDateString()}</span>
                   {deleteConfirm === e.id ? (
                     <div className="flex gap-1">
-                      <button onClick={() => deleteEnquiry(e.id)} className="text-xs px-2 py-1 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">Delete</button>
-                      <button onClick={() => setDeleteConfirm(null)} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">Cancel</button>
+                      <button onClick={() => deleteEnquiry(e.id)} className="text-xs px-2 py-1 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">{copy.delete}</button>
+                      <button onClick={() => setDeleteConfirm(null)} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">{copy.cancel}</button>
                     </div>
                   ) : (
                     <button onClick={e2 => { e2.stopPropagation(); setDeleteConfirm(e.id) }} className="text-gray-600 hover:text-red-400 transition-colors">
@@ -160,7 +177,7 @@ export default function EnquiriesPage() {
               </div>
 
               {selected.subject && <p className="text-white font-semibold mb-2">{selected.subject}</p>}
-              {selected.service && <p className="text-xs text-gray-500 mb-3">Service: {selected.service}</p>}
+              {selected.service && <p className="text-xs text-gray-500 mb-3">{copy.service}: {selected.service}</p>}
 
               <div className="bg-gray-800 rounded-xl p-4 mb-4">
                 <p className="text-gray-300 text-sm whitespace-pre-wrap">{selected.message}</p>
@@ -175,7 +192,7 @@ export default function EnquiriesPage() {
                       onClick={() => updateStatus(selected.id, s)}
                       className={`text-xs px-3 py-1.5 rounded-lg border font-semibold transition-colors ${selected.status === s ? statusStyles[s] : 'border-gray-700 text-gray-500 hover:border-gray-600 hover:text-gray-400'}`}
                     >
-                      {s.charAt(0).toUpperCase() + s.slice(1)}
+                      {s === 'new' ? t('statusNew') : s === 'read' ? t('statusRead') : t('statusReplied')}
                     </button>
                   ))}
                 </div>
@@ -183,13 +200,13 @@ export default function EnquiriesPage() {
               <div className="mt-4 pt-4 border-t border-gray-800">
                 {deleteConfirm === selected.id ? (
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-400">Delete this enquiry?</span>
-                    <button onClick={() => deleteEnquiry(selected.id)} className="text-xs px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">Yes, delete</button>
-                    <button onClick={() => setDeleteConfirm(null)} className="text-xs px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">Cancel</button>
+                    <span className="text-xs text-gray-400">{copy.deleteThis}</span>
+                    <button onClick={() => deleteEnquiry(selected.id)} className="text-xs px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">{copy.deleteConfirm}</button>
+                    <button onClick={() => setDeleteConfirm(null)} className="text-xs px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">{copy.cancel}</button>
                   </div>
                 ) : (
                   <button onClick={() => setDeleteConfirm(selected.id)} className="flex items-center gap-1.5 text-xs text-red-400 hover:text-red-300 transition-colors">
-                    <Trash2 className="w-3.5 h-3.5" /> Delete enquiry
+                    <Trash2 className="w-3.5 h-3.5" /> {copy.deleteAction}
                   </button>
                 )}
               </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { ChevronDown, ChevronUp, Search, Trash2 } from 'lucide-react'
+import { useAdminLang } from '@/context/AdminLangContext'
 
 interface Submission {
   id: string
@@ -27,6 +28,7 @@ const levelColor: Record<string, string> = {
 }
 
 export default function SubmissionsPage() {
+  const { t, lang } = useAdminLang()
   const [submissions, setSubmissions] = useState<Submission[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -86,19 +88,33 @@ export default function SubmissionsPage() {
       ? sortDir === 'asc' ? <ChevronUp className="w-3 h-3 inline ml-1" /> : <ChevronDown className="w-3 h-3 inline ml-1" />
       : null
 
+  const isTR = lang === 'tr'
+  const copy = {
+    title: t('submissionsTitle'),
+    total: isTR ? `${submissions.length} toplam başvuru` : `${submissions.length} total submissions`,
+    search: t('search'),
+    loading: t('loading'),
+    empty: isTR ? 'Başvuru bulunamadı.' : 'No submissions found.',
+    branch: isTR ? 'Şube' : 'Branch',
+    date: t('date'),
+    actions: isTR ? 'İşlemler' : 'Actions',
+    delete: t('delete'),
+    cancel: t('cancel'),
+  }
+
   return (
     <div>
       <div className="mb-6 flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Level Test Submissions</h1>
-          <p className="text-gray-400 text-sm mt-1">{submissions.length} total submissions</p>
+          <h1 className="text-2xl font-bold text-white">{copy.title}</h1>
+          <p className="text-gray-400 text-sm mt-1">{copy.total}</p>
         </div>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
-            placeholder="Search..."
+            placeholder={copy.search}
             className="bg-gray-900 border border-gray-800 text-white text-sm rounded-xl pl-9 pr-4 py-2 focus:outline-none focus:border-blue-500 w-56"
           />
         </div>
@@ -106,22 +122,22 @@ export default function SubmissionsPage() {
 
       <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
         {loading ? (
-          <div className="p-8 text-center text-gray-500">Loading...</div>
+          <div className="p-8 text-center text-gray-500">{copy.loading}</div>
         ) : filtered.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">No submissions found.</div>
+          <div className="p-8 text-center text-gray-500">{copy.empty}</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-800 text-gray-400 text-xs uppercase tracking-wider">
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('first_name')}>Name <SortIcon field="first_name" /></th>
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('email')}>Email <SortIcon field="email" /></th>
-                  <th className="text-left px-4 py-3">Phone</th>
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('branch')}>Branch <SortIcon field="branch" /></th>
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('score')}>Score <SortIcon field="score" /></th>
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('level')}>Level <SortIcon field="level" /></th>
-                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('created_at')}>Date <SortIcon field="created_at" /></th>
-                  <th className="px-4 py-3" />
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('first_name')}>{t('name')} <SortIcon field="first_name" /></th>
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('email')}>{t('email')} <SortIcon field="email" /></th>
+                  <th className="text-left px-4 py-3">{t('phone')}</th>
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('branch')}>{copy.branch} <SortIcon field="branch" /></th>
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('score')}>{t('score')} <SortIcon field="score" /></th>
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('level')}>{t('level')} <SortIcon field="level" /></th>
+                  <th className="text-left px-4 py-3 cursor-pointer hover:text-white" onClick={() => toggleSort('created_at')}>{copy.date} <SortIcon field="created_at" /></th>
+                  <th className="px-4 py-3">{copy.actions}</th>
                 </tr>
               </thead>
               <tbody>
@@ -139,8 +155,8 @@ export default function SubmissionsPage() {
                     <td className="px-4 py-3 text-right">
                       {deleteConfirm === s.id ? (
                         <div className="flex items-center justify-end gap-1">
-                          <button onClick={() => deleteSubmission(s.id)} className="text-xs px-2 py-1 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">Delete</button>
-                          <button onClick={() => setDeleteConfirm(null)} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">Cancel</button>
+                          <button onClick={() => deleteSubmission(s.id)} className="text-xs px-2 py-1 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors">{copy.delete}</button>
+                          <button onClick={() => setDeleteConfirm(null)} className="text-xs px-2 py-1 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">{copy.cancel}</button>
                         </div>
                       ) : (
                         <button onClick={() => setDeleteConfirm(s.id)} className="text-gray-600 hover:text-red-400 transition-colors">

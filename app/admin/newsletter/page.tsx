@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Search, Download } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import { useAdminLang } from '@/context/AdminLangContext'
 
 interface Subscriber {
   id: string
@@ -12,6 +13,7 @@ interface Subscriber {
 }
 
 export default function NewsletterPage() {
+  const { t, lang } = useAdminLang()
   const [subscribers, setSubscribers] = useState<Subscriber[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -60,15 +62,17 @@ export default function NewsletterPage() {
     return matchSearch && matchFilter
   })
 
+  const isTR = lang === 'tr'
+
   return (
     <div>
       <div className="mb-6 flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Newsletter Subscribers</h1>
-          <p className="text-gray-400 text-sm mt-1">{subscribers.filter(s => s.active).length} active subscribers</p>
+          <h1 className="text-2xl font-bold text-white">{t('newsletterTitle')}</h1>
+          <p className="text-gray-400 text-sm mt-1">{subscribers.filter(s => s.active).length} {t('activeSubscribers')}</p>
         </div>
         <button onClick={exportCSV} className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white text-sm px-4 py-2 rounded-xl transition-colors">
-          <Download className="w-4 h-4" /> Export CSV
+          <Download className="w-4 h-4" /> {t('exportCSV')}
         </button>
       </div>
 
@@ -78,7 +82,7 @@ export default function NewsletterPage() {
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
-            placeholder="Search email..."
+            placeholder={isTR ? 'E-posta ara...' : 'Search email...'}
             className="w-full bg-gray-900 border border-gray-800 text-white text-sm rounded-xl pl-9 pr-4 py-2 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -87,26 +91,26 @@ export default function NewsletterPage() {
           onChange={e => setFilter(e.target.value)}
           className="bg-gray-900 border border-gray-800 text-white text-sm rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
         >
-          <option value="all">All</option>
-          <option value="active">Active</option>
-          <option value="inactive">Unsubscribed</option>
+          <option value="all">{isTR ? 'Tümü' : 'All'}</option>
+          <option value="active">{t('active')}</option>
+          <option value="inactive">{isTR ? 'Pasif' : 'Inactive'}</option>
         </select>
       </div>
 
       <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
         {loading ? (
-          <div className="p-8 text-center text-gray-500">Loading...</div>
+          <div className="p-8 text-center text-gray-500">{t('loading')}</div>
         ) : filtered.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">No subscribers found.</div>
+          <div className="p-8 text-center text-gray-500">{isTR ? 'Abone bulunamadı.' : 'No subscribers found.'}</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-800 text-gray-400 text-xs uppercase tracking-wider">
-                  <th className="text-left px-4 py-3">Email</th>
-                  <th className="text-left px-4 py-3">Subscribed</th>
-                  <th className="text-left px-4 py-3">Status</th>
-                  <th className="text-right px-4 py-3">Actions</th>
+                  <th className="text-left px-4 py-3">{t('email')}</th>
+                  <th className="text-left px-4 py-3">{t('subscribed')}</th>
+                  <th className="text-left px-4 py-3">{isTR ? 'Durum' : 'Status'}</th>
+                  <th className="text-right px-4 py-3">{isTR ? 'İşlemler' : 'Actions'}</th>
                 </tr>
               </thead>
               <tbody>
@@ -116,7 +120,7 @@ export default function NewsletterPage() {
                     <td className="px-4 py-3 text-gray-400">{new Date(s.subscribed_at).toLocaleDateString()}</td>
                     <td className="px-4 py-3">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${s.active ? 'bg-green-500/20 text-green-300' : 'bg-gray-700 text-gray-400'}`}>
-                        {s.active ? 'Active' : 'Unsubscribed'}
+                        {s.active ? t('active') : (isTR ? 'Abonelik İptal' : 'Unsubscribed')}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-right">
@@ -124,7 +128,7 @@ export default function NewsletterPage() {
                         onClick={() => toggleActive(s.id, s.active)}
                         className="text-xs text-gray-400 hover:text-white border border-gray-700 hover:border-gray-600 px-3 py-1 rounded-lg transition-colors"
                       >
-                        {s.active ? 'Unsubscribe' : 'Re-activate'}
+                        {s.active ? (isTR ? 'Pasifleştir' : 'Deactivate') : t('reactivate')}
                       </button>
                     </td>
                   </tr>
