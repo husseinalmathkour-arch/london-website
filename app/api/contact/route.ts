@@ -66,10 +66,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Failed to save enquiry' }, { status: 500 })
     }
 
-    // Fetch all admin emails and send notification
-    const { data: admins } = await db.from('admin_users').select('email')
+    // Resolve notification recipients from site settings first, then admin users as fallback.
+    const [{ data: notificationSetting }, { data: admins }] = await Promise.all([
+      db.from('site_settings').select('value').eq('key', 'email_contact_notifications').maybeSingle(),
+      db.from('admin_users').select('email'),
+    ])
 
-    if (admins && admins.length > 0) {
+    const recipients = Array.from(
+      new Set(
+        [
+          notificationSetting?.value?.trim(),
+          ...(admins ?? []).map(admin => admin.email?.trim()),
+        ].filter((value): value is string => Boolean(value))
+      )
+    )
+
+    if (recipients.length > 0) {
       const html = `
         <!DOCTYPE html>
         <html>
@@ -136,7 +148,7 @@ export async function POST(req: NextRequest) {
                         <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:28px;">
                           <tr>
                             <td align="center">
-                              <a href="https://londonlanguageacademy.com/admin/enquiries"
+                              <a href="https://www.londonlanguageacademy.com/admin/enquiries"
                                 style="display:inline-block;background:#70212c;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.3px;">
                                 View in Admin Panel
                               </a>
@@ -162,15 +174,35 @@ export async function POST(req: NextRequest) {
           </body>
         </html>
       `
-      await Promise.all(admins.map(async (admin) => {
+
+      const results = await Promise.all(recipients.map(async (recipient) => {
         const result = await resend.emails.send({
           from: 'noreply@londonlanguageacademy.net',
-          to: admin.email,
+          to: recipient,
           subject: `New Enquiry from ${name}${enquiryType ? ` — ${enquiryType}` : ''}`,
           html,
         })
-        console.log(`Email to ${admin.email}:`, result.error ?? 'sent')
+
+        if (result.error) {
+          console.error(`Contact notification email failed for ${recipient}:`, result.error)
+        }
+
+        return { recipient, error: result.error }
       }))
+
+      const failedRecipients = results.filter(result => result.error)
+
+      if (failedRecipients.length === recipients.length) {
+        return NextResponse.json(
+          {
+            error: 'Enquiry was saved but notification email failed.',
+            details: failedRecipients.map(result => result.recipient),
+          },
+          { status: 502 }
+        )
+      }
+    } else {
+      console.error('Contact notification email skipped: no recipients configured')
     }
 
     return NextResponse.json({ success: true })
