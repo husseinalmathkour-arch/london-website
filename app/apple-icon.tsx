@@ -29,14 +29,20 @@ function ShieldMark() {
           position: 'relative',
         }}
       >
-        <div
+        <svg
+          viewBox="0 0 512 512"
+          width="100%"
+          height="100%"
           style={{
             position: 'absolute',
             inset: 0,
-            background: '#cfb77b',
-            clipPath: 'polygon(50% 4%, 92% 9%, 92% 46%, 84% 67%, 72% 81%, 50% 96%, 28% 81%, 16% 67%, 8% 46%, 8% 9%)',
           }}
-        />
+        >
+          <path
+            d="M256 42 L420 62 L420 236 C420 346 356 436 256 486 C156 436 92 346 92 236 L92 62 Z"
+            fill="#cfb77b"
+          />
+        </svg>
         <div
           style={{
             display: 'flex',
@@ -46,8 +52,9 @@ function ShieldMark() {
             fontFamily: 'Georgia, Times New Roman, serif',
             fontSize: 52,
             lineHeight: 1,
-            transform: 'translateY(-2px)',
+            transform: 'translateY(-1px)',
             position: 'relative',
+            fontWeight: 700,
           }}
         >
           L
