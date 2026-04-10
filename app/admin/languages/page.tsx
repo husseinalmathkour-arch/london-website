@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase'
 import { revalidateAll } from '@/lib/revalidate'
 import { Plus, Pencil, Trash2, X } from 'lucide-react'
 import ImageUpload from '@/components/admin/ImageUpload'
+import { useAdminLang } from '@/context/AdminLangContext'
 
 interface Language {
   id: string
@@ -29,6 +30,7 @@ const empty = {
 }
 
 export default function LanguagesPage() {
+  const { t, lang } = useAdminLang()
   const [langs, setLangs] = useState<Language[]>([])
   const [loading, setLoading] = useState(true)
   const [modal, setModal] = useState(false)
@@ -95,16 +97,49 @@ export default function LanguagesPage() {
 
   const inp = 'w-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500'
   const lbl = 'block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5'
+  const isTR = lang === 'tr'
+  const copy = {
+    title: isTR ? 'Sunulan Diller' : 'Languages Offered',
+    count: isTR ? `${langs.length} dil` : `${langs.length} languages`,
+    add: isTR ? 'Dil Ekle' : 'Add Language',
+    empty: isTR ? 'Henüz dil yok.' : 'No languages yet.',
+    students: isTR ? 'öğrenci' : 'students',
+    on: isTR ? 'Açık' : 'On',
+    off: isTR ? 'Kapalı' : 'Off',
+    hide: t('hide'),
+    show: t('show'),
+    deleteTitle: isTR ? 'Bu dil silinsin mi?' : 'Delete this language?',
+    cancel: t('cancel'),
+    delete: t('delete'),
+    editTitle: isTR ? 'Dili Düzenle' : 'Edit Language',
+    addTitle: isTR ? 'Dil Ekle' : 'Add Language',
+    english: t('english'),
+    turkish: t('turkish'),
+    flag: isTR ? 'Bayrak emojisi' : 'Flag emoji',
+    nameEn: isTR ? 'Ad (EN)' : 'Name (EN)',
+    nameTr: isTR ? 'Ad (TR)' : 'Name (TR)',
+    levelEn: isTR ? 'Seviye / Etiket (EN)' : 'Level / Tag (EN)',
+    levelTr: isTR ? 'Seviye / Etiket (TR)' : 'Level / Tag (TR)',
+    descriptionEn: isTR ? 'Açıklama (EN)' : 'Description (EN)',
+    descriptionTr: isTR ? 'Açıklama (TR)' : 'Description (TR)',
+    color: isTR ? 'Renk (Tailwind)' : 'Color (Tailwind)',
+    image: isTR ? 'Görsel' : 'Image',
+    imageHint: isTR
+      ? 'Dilin ülkesini veya kültürünü temsil eden görsel. Önerilen: 800×500 yatay, JPG, 700KB altı.'
+      : "Photo representing the language's country or culture (e.g. a landmark or cityscape). Recommended: 800×500px landscape, JPG, under 700KB.",
+    visible: isTR ? 'Web sitesinde göster' : 'Visible on website',
+    save: saving ? t('saving') : editing ? t('saveChanges') : (isTR ? 'Dil Ekle' : 'Add Language'),
+  }
 
   return (
     <div>
       <div className="mb-6 flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Languages Offered</h1>
-          <p className="text-gray-400 text-sm mt-1">{langs.length} languages</p>
+          <h1 className="text-2xl font-bold text-white">{copy.title}</h1>
+          <p className="text-gray-400 text-sm mt-1">{copy.count}</p>
         </div>
         <button onClick={openCreate} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors">
-          <Plus className="w-4 h-4" /> Add Language
+          <Plus className="w-4 h-4" /> {copy.add}
         </button>
       </div>
 
@@ -112,7 +147,7 @@ export default function LanguagesPage() {
         {loading ? (
           [...Array(4)].map((_, i) => <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl p-5 h-32 animate-pulse" />)
         ) : langs.length === 0 ? (
-          <div className="col-span-4 bg-gray-900 border border-gray-800 rounded-2xl p-8 text-center text-gray-500">No languages yet.</div>
+          <div className="col-span-4 bg-gray-900 border border-gray-800 rounded-2xl p-8 text-center text-gray-500">{copy.empty}</div>
         ) : langs.map(l => (
           <div key={l.id} className={`bg-gray-900 border rounded-2xl p-4 ${l.published ? 'border-gray-800' : 'border-gray-800 opacity-60'}`}>
             <div className="flex items-center justify-between mb-2">
@@ -126,11 +161,11 @@ export default function LanguagesPage() {
               </div>
             </div>
             {l.level_en && <p className="text-gray-500 text-xs mb-1">{l.level_en}</p>}
-            {l.students > 0 && <p className="text-gray-600 text-xs">{l.students.toLocaleString()} students</p>}
+            {l.students > 0 && <p className="text-gray-600 text-xs">{l.students.toLocaleString()} {copy.students}</p>}
             <p className="text-gray-600 text-xs">{new Date(l.created_at).toLocaleDateString()}</p>
             <div className="flex items-center justify-between mt-2">
-              <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${l.published ? 'bg-green-500/20 text-green-300' : 'bg-gray-700 text-gray-400'}`}>{l.published ? 'On' : 'Off'}</span>
-              <button onClick={() => togglePublish(l.id, l.published)} className="text-xs text-gray-500 hover:text-white transition-colors">{l.published ? 'Hide' : 'Show'}</button>
+              <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${l.published ? 'bg-green-500/20 text-green-300' : 'bg-gray-700 text-gray-400'}`}>{l.published ? copy.on : copy.off}</span>
+              <button onClick={() => togglePublish(l.id, l.published)} className="text-xs text-gray-500 hover:text-white transition-colors">{l.published ? copy.hide : copy.show}</button>
             </div>
           </div>
         ))}
@@ -139,10 +174,10 @@ export default function LanguagesPage() {
       {deleteConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 w-full max-w-sm text-center">
-            <p className="text-white font-semibold mb-2">Delete this language?</p>
+            <p className="text-white font-semibold mb-2">{copy.deleteTitle}</p>
             <div className="flex gap-3 justify-center">
-              <button onClick={() => setDeleteConfirm(null)} className="px-4 py-2 rounded-xl border border-gray-700 text-gray-300 text-sm">Cancel</button>
-              <button onClick={() => deleteLang(deleteConfirm)} className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-semibold">Delete</button>
+              <button onClick={() => setDeleteConfirm(null)} className="px-4 py-2 rounded-xl border border-gray-700 text-gray-300 text-sm">{copy.cancel}</button>
+              <button onClick={() => deleteLang(deleteConfirm)} className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-semibold">{copy.delete}</button>
             </div>
           </div>
         </div>
@@ -153,14 +188,14 @@ export default function LanguagesPage() {
           <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-white font-bold text-lg">{editing ? 'Edit Language' : 'Add Language'}</h2>
+                <h2 className="text-white font-bold text-lg">{editing ? copy.editTitle : copy.addTitle}</h2>
                 <button onClick={() => setModal(false)} className="text-gray-500 hover:text-white"><X className="w-5 h-5" /></button>
               </div>
 
               <div className="flex border-b border-gray-800 mb-5">
                 {(['en', 'tr'] as const).map(l => (
                   <button key={l} onClick={() => setTab(l)} className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${tab === l ? 'border-blue-500 text-blue-400' : 'border-transparent text-gray-500 hover:text-gray-300'}`}>
-                    {l === 'en' ? 'English' : 'Turkish'}
+                    {l === 'en' ? copy.english : copy.turkish}
                   </button>
                 ))}
               </div>
@@ -168,11 +203,11 @@ export default function LanguagesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-3 gap-3">
                   <div>
-                    <label className={lbl}>Flag emoji</label>
+                    <label className={lbl}>{copy.flag}</label>
                     <input className={inp} value={form.flag} onChange={e => setForm(f => ({ ...f, flag: e.target.value }))} placeholder="🇬🇧" />
                   </div>
                   <div className="col-span-2">
-                    <label className={lbl}>Name (EN) *</label>
+                    <label className={lbl}>{copy.nameEn} *</label>
                     <input className={inp} value={form.name_en} onChange={e => setForm(f => ({ ...f, name_en: e.target.value }))} placeholder="English" />
                   </div>
                 </div>
@@ -180,11 +215,11 @@ export default function LanguagesPage() {
                 {tab === 'en' && (
                   <>
                     <div>
-                      <label className={lbl}>Level / Tag (EN)</label>
+                      <label className={lbl}>{copy.levelEn}</label>
                       <input className={inp} value={form.level_en} onChange={e => setForm(f => ({ ...f, level_en: e.target.value }))} placeholder="A1 to C2" />
                     </div>
                     <div>
-                      <label className={lbl}>Description (EN)</label>
+                      <label className={lbl}>{copy.descriptionEn}</label>
                       <textarea className={inp} rows={3} value={form.description_en} onChange={e => setForm(f => ({ ...f, description_en: e.target.value }))} placeholder="Brief description in English" />
                     </div>
                   </>
@@ -192,15 +227,15 @@ export default function LanguagesPage() {
                 {tab === 'tr' && (
                   <>
                     <div>
-                      <label className={lbl}>Name (TR)</label>
+                      <label className={lbl}>{copy.nameTr}</label>
                       <input className={inp} value={form.name_tr} onChange={e => setForm(f => ({ ...f, name_tr: e.target.value }))} placeholder="İngilizce" />
                     </div>
                     <div>
-                      <label className={lbl}>Level / Tag (TR)</label>
+                      <label className={lbl}>{copy.levelTr}</label>
                       <input className={inp} value={form.level_tr} onChange={e => setForm(f => ({ ...f, level_tr: e.target.value }))} placeholder="A1'den C2'ye" />
                     </div>
                     <div>
-                      <label className={lbl}>Description (TR)</label>
+                      <label className={lbl}>{copy.descriptionTr}</label>
                       <textarea className={inp} rows={3} value={form.description_tr} onChange={e => setForm(f => ({ ...f, description_tr: e.target.value }))} placeholder="Türkçe açıklama" />
                     </div>
                   </>
@@ -208,35 +243,35 @@ export default function LanguagesPage() {
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className={lbl}>Students</label>
+                    <label className={lbl}>{copy.students}</label>
                     <input type="number" className={inp} value={form.students} onChange={e => setForm(f => ({ ...f, students: +e.target.value }))} />
                   </div>
                   <div>
-                    <label className={lbl}>Color (Tailwind)</label>
+                    <label className={lbl}>{copy.color}</label>
                     <input className={inp} value={form.color} onChange={e => setForm(f => ({ ...f, color: e.target.value }))} placeholder="blue" />
                   </div>
                 </div>
 
                 <ImageUpload
-                  label="Image"
+                  label={copy.image}
                   folder="languages"
                   value={form.image_url ?? ''}
                   onChange={url => setForm(f => ({ ...f, image_url: url }))}
-                  hint="Photo representing the language's country or culture (e.g. a landmark or cityscape). Recommended: 800×500px landscape, JPG, under 700KB."
+                  hint={copy.imageHint}
                 />
 
                 <label className="flex items-center gap-3 cursor-pointer">
                   <div className={`w-10 h-6 rounded-full transition-colors ${form.published ? 'bg-blue-600' : 'bg-gray-700'}`} onClick={() => setForm(f => ({ ...f, published: !f.published }))}>
                     <div className={`w-4 h-4 bg-white rounded-full mt-1 transition-transform ${form.published ? 'translate-x-5' : 'translate-x-1'}`} />
                   </div>
-                  <span className="text-sm text-gray-300">Visible on website</span>
+                  <span className="text-sm text-gray-300">{copy.visible}</span>
                 </label>
               </div>
 
               <div className="flex justify-end gap-3 mt-6">
-                <button onClick={() => setModal(false)} className="px-4 py-2 rounded-xl border border-gray-700 text-gray-300 text-sm">Cancel</button>
+                <button onClick={() => setModal(false)} className="px-4 py-2 rounded-xl border border-gray-700 text-gray-300 text-sm">{copy.cancel}</button>
                 <button onClick={save} disabled={saving || !form.name_en} className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-sm font-semibold transition-colors">
-                  {saving ? 'Saving...' : editing ? 'Save Changes' : 'Add Language'}
+                  {copy.save}
                 </button>
               </div>
             </div>

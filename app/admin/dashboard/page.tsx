@@ -16,15 +16,33 @@ interface Stats {
   testimonials: number
 }
 
+interface RecentEnquiry {
+  id: string
+  name: string
+  subject: string | null
+  status: 'new' | 'read' | 'replied'
+  created_at: string
+}
+
+interface RecentSubmission {
+  id: string
+  first_name: string
+  last_name: string
+  level: string
+  created_at: string
+}
+
 export default function DashboardPage() {
   const { t, lang } = useAdminLang()
   const [stats, setStats] = useState<Stats | null>(null)
+  const [recentEnquiries, setRecentEnquiries] = useState<RecentEnquiry[]>([])
+  const [recentSubmissions, setRecentSubmissions] = useState<RecentSubmission[]>([])
   const [loading, setLoading] = useState(true)
   const isTR = lang === 'tr'
 
   useEffect(() => {
     async function load() {
-      const [submissions, enquiries, newEnquiries, subscribers, blogPosts, teamMembers, testimonials] = await Promise.all([
+      const [submissions, enquiries, newEnquiries, subscribers, blogPosts, teamMembers, testimonials, recentEnquiriesData, recentSubmissionsData] = await Promise.all([
         supabase.from('level_test_submissions').select('id', { count: 'exact', head: true }),
         supabase.from('contact_enquiries').select('id', { count: 'exact', head: true }),
         supabase.from('contact_enquiries').select('id', { count: 'exact', head: true }).eq('status', 'new'),
@@ -32,6 +50,8 @@ export default function DashboardPage() {
         supabase.from('blog_posts').select('id', { count: 'exact', head: true }),
         supabase.from('team_members').select('id', { count: 'exact', head: true }),
         supabase.from('testimonials').select('id', { count: 'exact', head: true }),
+        supabase.from('contact_enquiries').select('id,name,subject,status,created_at').order('created_at', { ascending: false }).limit(5),
+        supabase.from('level_test_submissions').select('id,first_name,last_name,level,created_at').order('created_at', { ascending: false }).limit(5),
       ])
       setStats({
         submissions: submissions.count ?? 0,
@@ -42,6 +62,8 @@ export default function DashboardPage() {
         teamMembers: teamMembers.count ?? 0,
         testimonials: testimonials.count ?? 0,
       })
+      setRecentEnquiries((recentEnquiriesData.data as RecentEnquiry[] | null) ?? [])
+      setRecentSubmissions((recentSubmissionsData.data as RecentSubmission[] | null) ?? [])
       setLoading(false)
     }
     load()
@@ -76,6 +98,12 @@ export default function DashboardPage() {
       icon: Settings,
     },
   ]
+
+  const statusTone: Record<RecentEnquiry['status'], string> = {
+    new: 'bg-red-500/10 text-red-300 border-red-500/20',
+    read: 'bg-yellow-500/10 text-yellow-300 border-yellow-500/20',
+    replied: 'bg-green-500/10 text-green-300 border-green-500/20',
+  }
 
   return (
     <div>
@@ -173,6 +201,63 @@ export default function DashboardPage() {
               </Link>
             )
             })}
+          </div>
+
+          <div className="mt-8 grid gap-4 xl:grid-cols-2">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-base font-semibold text-white">{isTR ? 'Son iletişim talepleri' : 'Recent enquiries'}</h3>
+                  <p className="text-sm text-gray-400">{isTR ? 'Yeni mesajları hızlıca gözden geçirin.' : 'Quickly scan the newest contact requests.'}</p>
+                </div>
+                <Link href="/admin/enquiries" className="text-sm text-blue-400 hover:text-blue-300">{isTR ? 'Tümünü gör' : 'View all'}</Link>
+              </div>
+              {recentEnquiries.length === 0 ? (
+                <p className="text-sm text-gray-500">{isTR ? 'Henüz iletişim talebi yok.' : 'No enquiries yet.'}</p>
+              ) : (
+                <div className="space-y-3">
+                  {recentEnquiries.map(item => (
+                    <Link key={item.id} href="/admin/enquiries" className="flex items-start justify-between gap-3 rounded-xl border border-gray-800 bg-gray-950/50 px-4 py-3 transition-colors hover:border-gray-700 hover:bg-gray-800/40">
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-white">{item.name}</p>
+                        <p className="truncate text-xs text-gray-400">{item.subject || (isTR ? 'Konu belirtilmedi' : 'No subject')}</p>
+                      </div>
+                      <div className="shrink-0 text-right">
+                        <span className={`inline-flex rounded-full border px-2 py-0.5 text-[11px] font-semibold ${statusTone[item.status]}`}>
+                          {item.status === 'new' ? t('statusNew') : item.status === 'read' ? t('statusRead') : t('statusReplied')}
+                        </span>
+                        <p className="mt-1 text-[11px] text-gray-500">{new Date(item.created_at).toLocaleDateString()}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-base font-semibold text-white">{isTR ? 'Son seviye testleri' : 'Recent level tests'}</h3>
+                  <p className="text-sm text-gray-400">{isTR ? 'Yeni test sonuçlarını ve seviyeleri görün.' : 'See the latest test results and levels.'}</p>
+                </div>
+                <Link href="/admin/submissions" className="text-sm text-blue-400 hover:text-blue-300">{isTR ? 'Tümünü gör' : 'View all'}</Link>
+              </div>
+              {recentSubmissions.length === 0 ? (
+                <p className="text-sm text-gray-500">{isTR ? 'Henüz başvuru yok.' : 'No submissions yet.'}</p>
+              ) : (
+                <div className="space-y-3">
+                  {recentSubmissions.map(item => (
+                    <Link key={item.id} href="/admin/submissions" className="flex items-start justify-between gap-3 rounded-xl border border-gray-800 bg-gray-950/50 px-4 py-3 transition-colors hover:border-gray-700 hover:bg-gray-800/40">
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-white">{item.first_name} {item.last_name}</p>
+                        <p className="truncate text-xs text-gray-400">{isTR ? 'Tespit edilen seviye' : 'Detected level'}: {item.level}</p>
+                      </div>
+                      <p className="shrink-0 text-[11px] text-gray-500">{new Date(item.created_at).toLocaleDateString()}</p>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </>
       )}
