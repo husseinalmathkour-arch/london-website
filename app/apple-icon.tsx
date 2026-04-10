@@ -16,13 +16,13 @@ function ShieldMark() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#7b1830',
+        background: 'transparent',
       }}
     >
       <div
         style={{
-          width: '84%',
-          height: '84%',
+          width: '88%',
+          height: '88%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -50,7 +50,7 @@ function ShieldMark() {
             justifyContent: 'center',
             color: '#7b1830',
             fontFamily: 'Georgia, Times New Roman, serif',
-            fontSize: 52,
+            fontSize: 56,
             lineHeight: 1,
             transform: 'translateY(-1px)',
             position: 'relative',
